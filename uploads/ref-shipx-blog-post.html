@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior:smooth;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Cross-Border Shipping from Vietnam is Still Broken in 2026 — ShipX Field Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/services-toolkit-ad.css">
+<link rel="stylesheet" href="css/services-duo-icon.css">
+<link rel="stylesheet" href="blog.css">
+<style id="reveal-fouc">
+  html.js-reveal-ready [data-reveal="cascade"] > *,
+  html.js-reveal-ready [data-reveal="fade"] { opacity: 0; }
+  html[data-reduced-motion="true"].js-reveal-ready [data-rm-reveal="cascade"] > *,
+  html[data-reduced-motion="true"].js-reveal-ready [data-rm-reveal="fade"] { opacity: 0; }
+</style>
+<script>
+  try {
+    if (localStorage.getItem('shipx-reduced-motion') === '1') {
+      document.documentElement.setAttribute('data-reduced-motion', 'true');
+    }
+  } catch (_) {}
+  document.documentElement.classList.add('js-reveal-ready');
+  window.__rmRevealFailsafe = setTimeout(function () {
+    document.documentElement.classList.remove('js-reveal-ready');
+  }, 1500);
+</script>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="snx-top-nav" style="position:sticky;top:0;z-index:100;width:100%;height:72px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 64px;background:rgba(52,24,52,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
+  <div style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
+    <img src="assets/logos/shipx-logo-white.svg" alt="ShipX" style="height:24px;width:auto;display:block;">
+    <span style="font-family:Inter,sans-serif;font-size:9px;font-weight:500;letter-spacing:0.12em;color:rgba(255,255,255,0.45);padding-left:14px;border-left:1px solid rgba(255,255,255,0.15);text-transform:uppercase;line-height:1.4;">Delivering<br>beyond borders</span>
+  </div>
+  <div style="display:flex;gap:30px;flex:1;justify-content:center;">
+    <a href="#" class="snx-nav-link" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);display:inline-flex;align-items:center;gap:5px;text-decoration:none;">Services
+      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#" class="snx-nav-link" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);display:inline-flex;align-items:center;gap:5px;text-decoration:none;">Solutions
+      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#" class="snx-nav-link" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);text-decoration:none;">Tools</a>
+    <a href="#" class="snx-nav-link" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);text-decoration:none;">Pricing</a>
+    <a href="blog.html" class="snx-nav-link snx-nav-active" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#fff;display:inline-flex;align-items:center;gap:5px;text-decoration:none;padding-bottom:3px;border-bottom:2px solid #FF00E5;">Resources
+      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+    <button style="background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:500;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;letter-spacing:0.04em;cursor:pointer;">
+      <span style="width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#FF00E5,#4F378A);display:inline-block;flex-shrink:0;"></span>
+      EN
+      <svg width="9" height="9" viewBox="0 0 20 20" fill="none" style="opacity:0.7" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button style="background:transparent;border:1px solid rgba(255,255,255,0.3);border-radius:8px;color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:500;padding:8px 16px;cursor:pointer;">Log in / Sign up</button>
+    <a href="#" style="background:linear-gradient(135deg,#4F378A 0%,rgba(255,0,229,0.85) 100%);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;border-radius:8px;padding:9px 18px;display:inline-flex;align-items:center;gap:8px;box-shadow:inset 0 0 4px rgba(255,88,238,0.6),inset -2px -2px 4px #9A00AE,0 1px 2px rgba(20,0,99,0.4),0 0 18px rgba(255,0,229,0.3);text-decoration:none;">Talk to Sales
+      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.167 10h11.667M10 4.167L15.833 10 10 15.833" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ BREADCRUMB ═══ -->
+<nav class="post-crumb" aria-label="Breadcrumb">
+  <div class="post-crumb-inner">
+    <a href="blog.html">Resources</a>
+    <span class="sep">›</span>
+    <a href="blog.html">Field Notes</a>
+    <span class="sep">›</span>
+    <a href="blog.html">Cross-Border</a>
+    <span class="sep">›</span>
+    <span class="current">Vietnam, 2026</span>
+  </div>
+</nav>
+
+<!-- ═══ 1. POST HERO ═══ -->
+<section class="post-hero">
+  <div class="container">
+    <div class="post-hero-grid" data-reveal="fade">
+      <div>
+        <span class="post-eyebrow">Cross-Border · Industry Report</span>
+        <h1 class="post-h1">Why Cross-Border Shipping from Vietnam is <em>Still Broken in 2026.</em></h1>
+        <p class="post-dek">After three years of FTAs, port upgrades, and AI-routing pitches, ASEAN sellers still wait nine days for parcels that should take four. Here&rsquo;s where the lane really breaks &mdash; and what the ShipX team learned shipping 2M+ orders last year.</p>
+        <div class="author-row">
+          <div class="avatar" aria-hidden="true">K</div>
+          <div class="who-block">
+            <span class="who">Kim Nguyen</span>
+            <span class="meta">Head of Operations · ShipX Vietnam</span>
+          </div>
+          <span class="read">9 min read &middot; Apr 30, 2026</span>
+        </div>
+      </div>
+
+      <figure class="post-hero-photo">
+        <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=1200&q=80&auto=format&fit=crop" alt="Container yard at Cát Lái Port, Ho Chi Minh City, photographed from above during peak season">
+        <span class="stamp" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          Industry Report
+        </span>
+        <figcaption class="cap">Container yard at Cát Lái Port, Ho Chi Minh City &mdash; peak season backlog, March 2026.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. ARTICLE WRAP ═══ -->
+<div class="article-wrap">
+  <aside class="post-toc" aria-label="In this article">
+    <h4 class="post-toc-h">In this article</h4>
+    <ul class="post-toc-list">
+      <li><a class="post-toc-link is-active" href="#a-1"><span class="post-toc-num">1</span>The 9-day problem</a></li>
+      <li><a class="post-toc-link" href="#a-2"><span class="post-toc-num">2</span>Where the lane breaks</a></li>
+      <li><a class="post-toc-link" href="#a-3"><span class="post-toc-num">3</span>Customs is the bottleneck</a></li>
+      <li><a class="post-toc-link" href="#a-4"><span class="post-toc-num">4</span>The last-mile gap in the US</a></li>
+      <li><a class="post-toc-link" href="#a-5"><span class="post-toc-num">5</span>What &ldquo;fixed&rdquo; looks like</a></li>
+    </ul>
+
+    <div class="post-toc-share">
+      <div class="post-toc-share-label">Share</div>
+      <div class="post-toc-share-row">
+        <a class="share-btn" href="#" aria-label="Copy link" title="Copy link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </a>
+        <a class="share-btn" href="#" aria-label="Share to LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5zM3 9h4v12H3V9zm7.5 0h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"></path></svg>
+        </a>
+        <a class="share-btn" href="#" aria-label="Share to X" title="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-4.71-6.23-5.4 6.23H2.74l7.73-8.83L1.25 2.25h6.83l4.25 5.62 5.91-5.62zm-1.16 17.52h1.83L7.08 4.13H5.12L17.08 19.77z"></path></svg>
+        </a>
+        <a class="share-btn" href="#" aria-label="Share via email" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 7 9-7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <article class="post-body">
+    <p class="lede">A Saigon-based skincare brand shipped a $14 serum to a buyer in Los Angeles last March. The buyer received it on day 11. The Pricing Wizard said it should have been day 4. This is the story of <em>those seven missing days</em> &mdash; and the eight checkpoints where they get lost.</p>
+
+    <h2 id="a-1" class="post-h2"><span class="post-h2-num">Section One</span>The 9-day problem</h2>
+    <p>The Vietnam &rarr; United States lane is the busiest in ShipX&rsquo;s network. In Q1 2026 we processed just under 600,000 parcels along it. Median door-to-door transit was 9.2 days. Express SLA, on paper, is 4 days. So the question we kept asking through Q1: <em>where do the five extra days go?</em></p>
+    <p>What we found is that the lane isn&rsquo;t broken in one place. It&rsquo;s <em>haemorrhaging time</em> in eight &mdash; and three of them aren&rsquo;t visible to any seller using legacy carrier dashboards. The seller sees &ldquo;in transit&rdquo; for nine days and assumes a flight is slow. It isn&rsquo;t a flight problem. It almost never is.</p>
+
+    <div class="pull-stat">
+      <div class="pull-stat-item">
+        <p class="pull-stat-num">9.2<span class="unit">days</span></p>
+        <p class="pull-stat-label">Median Vietnam&nbsp;&rarr;&nbsp;US Express door-to-door transit, Q1 2026. The advertised SLA is 4 days.</p>
+      </div>
+      <div class="pull-stat-item">
+        <p class="pull-stat-num">$17.40</p>
+        <p class="pull-stat-label">Average per-parcel overpayment we measured against suboptimal lane routing in the same cohort.</p>
+      </div>
+    </div>
+
+    <h2 id="a-2" class="post-h2"><span class="post-h2-num">Section Two</span>Where the lane breaks</h2>
+    <p>The eight checkpoints, in order: <strong>pickup window, sortation, export customs, airline handoff, transit, US customs, last-mile injection, doorstep</strong>. Three of these are dominated by humans, not systems &mdash; and that&rsquo;s where most of the time leakage lives.</p>
+
+    <h3 class="post-h3">Pickup is a politeness problem</h3>
+    <p>You think your parcel is moving the moment you book it. It isn&rsquo;t. The median time from &ldquo;label printed&rdquo; to &ldquo;courier scanned at pickup&rdquo; on the Saigon lane is 14 hours. The carrier driver waits to batch six pickups on one route, the seller waits to bundle the day&rsquo;s SKUs into one box, and the parcel sits.</p>
+
+    <h3 class="post-h3">Sortation is a software problem</h3>
+    <p>Most ASEAN sortation centres still run on infrastructure from the early 2010s &mdash; manual scans, paper-based exception handling, no real upstream-downstream sync. When a regional shutdown hit Hanoi&rsquo;s main hub for 36 hours in February, parcels physically present in the building couldn&rsquo;t be located in the system. Sellers got &ldquo;hub processing&rdquo; events for two days, then nothing, then a delivery scan a week later.</p>
+
+    <h3 class="post-h3">The airline handoff has its own queue</h3>
+    <p>Cargo bays don&rsquo;t fly empty. If your parcel is bumped from a 2am freighter to make room for higher-priced freight, the carrier&rsquo;s system shows &ldquo;in transit&rdquo; until the next available slot &mdash; which can be the same flight 24 hours later. From the seller&rsquo;s dashboard, this looks indistinguishable from normal transit.</p>
+
+    <blockquote>
+      We&rsquo;re not slow because the planes are slow. We&rsquo;re slow because a parcel hits seven hand-offs and four of them are people writing things on whiteboards.
+      <cite>&mdash; Operations Lead, Tier-1 ASEAN postal carrier (off-record)</cite>
+    </blockquote>
+
+    <h2 id="a-3" class="post-h2"><span class="post-h2-num">Section Three</span>Customs is the bottleneck nobody markets</h2>
+    <p>If you talk to sellers, they&rsquo;ll say customs is slow. If you talk to carriers, they&rsquo;ll say sellers don&rsquo;t fill the paperwork correctly. <em>Both are right.</em></p>
+    <p>CN22 declarations meant for low-value postal mail are still being used by sellers shipping $200 cosmetic kits &mdash; which is why <strong>T11 commercial clearance</strong> through a specialist lane became one of the most-requested features ShipX shipped last year. The single most common reason a parcel sits in US customs for 36 hours is a one-character mismatch between the HS code on the invoice and the description on the airway bill.</p>
+
+    <div class="pull-stat">
+      <div class="pull-stat-item">
+        <p class="pull-stat-num">47<span class="unit">%</span></p>
+        <p class="pull-stat-label">Share of customs holds in our Q1 dataset that traced back to a single field mismatch on the commercial invoice.</p>
+      </div>
+      <div class="pull-stat-item">
+        <p class="pull-stat-num">36<span class="unit">hrs</span></p>
+        <p class="pull-stat-label">Median hold duration when a low-value declaration is filed for a parcel that needs commercial clearance.</p>
+      </div>
+    </div>
+
+    <p>The fix is not exotic. It&rsquo;s pre-clearance on the origin side &mdash; the customs work happens before the parcel leaves Vietnam, not at LAX at 3am with no one to call. <a href="blog.html">Chi Le wrote about the CN22 vs. T11 decision in detail last month</a>; if you&rsquo;re shipping anything over $200, that piece is worth ten minutes.</p>
+
+    <h2 id="a-4" class="post-h2"><span class="post-h2-num">Section Four</span>The last-mile gap in the US</h2>
+    <p>Once the parcel lands in Los Angeles, it hits a second slowdown that nobody warns sellers about: <em>the gap between airline handoff and USPS injection.</em> Most ASEAN carriers tender to a US consolidator who tenders to USPS. Each handoff adds 12&ndash;36 hours, plus a sortation step the parcel didn&rsquo;t need.</p>
+    <p>ShipX operates its own linehaul from Ho Chi Minh City to Los Angeles. We took back four of those checkpoints. Median Q1 transit for parcels on the ShipX-owned lane: <strong>6.1 days.</strong> Same destination. Same product category. Three fewer days, on a network that didn&rsquo;t exist 18 months ago.</p>
+
+    <div class="pull-stat">
+      <div class="pull-stat-item">
+        <p class="pull-stat-num">6.1<span class="unit">days</span></p>
+        <p class="pull-stat-label">Median transit on ShipX-owned linehaul (VN &rarr; LA &rarr; USPS injection), same Q1 cohort.</p>
+      </div>
+      <div class="pull-stat-item">
+        <p class="pull-stat-num">4</p>
+        <p class="pull-stat-label">Checkpoints we removed by owning the lane end-to-end instead of tendering through a US consolidator.</p>
+      </div>
+    </div>
+
+    <h2 id="a-5" class="post-h2"><span class="post-h2-num">Section Five</span>What &ldquo;fixed&rdquo; actually looks like</h2>
+    <p>Fixing a cross-border lane isn&rsquo;t a software problem. It&rsquo;s an <em>ownership problem.</em> The carriers that win the ASEAN-to-US route in 2026 won&rsquo;t be the ones with the slickest dashboards &mdash; they&rsquo;ll be the ones who own the lane end-to-end and can be held accountable when it slips.</p>
+    <p>For us that means three things, in order: AI-assisted HS code classification at the label-print step so customs is right before the parcel moves; pre-clearance on the origin side so the parcel isn&rsquo;t making decisions at the US border; and a ShipX-operated linehaul that doesn&rsquo;t tender to anyone we can&rsquo;t put on a call.</p>
+    <p>These aren&rsquo;t promises. They&rsquo;re what the platform is built to do &mdash; and the Q1 numbers are how we know it&rsquo;s working. The team is still finding hours to take out of the lane. Some of them are software hours. Most are still ownership hours. <a href="#cta-section">Book a 20-minute call</a> and we&rsquo;ll walk through your specific lane&rsquo;s Q1 transit data.</p>
+
+    <!-- ═══ 3. AUTHOR BIO ═══ -->
+    <aside class="author-bio" data-reveal="fade">
+      <div class="avatar-lg" aria-hidden="true">K</div>
+      <div>
+        <h4 class="name">Kim Nguyen</h4>
+        <div class="role">Head of Operations · ShipX Vietnam</div>
+        <p class="bio">Kim leads ShipX&rsquo;s Vietnam operations and runs the corridor analytics team. She&rsquo;s spent the last decade in cross-border logistics across ASEAN &mdash; from her first job loading Singapore Post containers in HCM to building ShipX&rsquo;s first AI routing models. Writes here when something in the data makes her angry enough.</p>
+        <a class="link" href="#" aria-label="Kim Nguyen on LinkedIn">Follow Kim on LinkedIn
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </aside>
+  </article>
+</div>
+
+<!-- ═══ TOOLKIT AD CAROUSEL ═══ -->
+<div class="toolkit-ad-wrap">
+  <section class="toolkit-ad" aria-label="Toolkit highlights" data-active="0" data-phase="idle" data-direction="1">
+    <div class="toolkit-ad__glow" aria-hidden="true"></div>
+    <div class="toolkit-ad__grid" aria-hidden="true"></div>
+
+    <div class="toolkit-ad__track">
+      <div class="toolkit-ad__slide is-active" data-slide="0">
+        <div class="toolkit-ad__copy">
+          <h3 class="toolkit-ad__headline">What&rsquo;s it gonna <em>cost me?</em></h3>
+          <p class="toolkit-ad__body">Market average plus ShipX&rsquo;s contracted pricing for your exact lane, in under 30 seconds.</p>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <a class="toolkit-ad__cta" href="/toolkits#pricing">Get your rate
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.167 10h11.667M10 4.167L15.833 10 10 15.833" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="toolkit-ad__cta-ghost" href="/toolkits">Explore More Tools
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.167 10h11.667M10 4.167L15.833 10 10 15.833" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <ul class="toolkit-ad__chips" aria-label="Common pricing questions">
+          <li class="toolkit-ad__chip">Cheapest lane?</li>
+          <li class="toolkit-ad__chip">Express or sea?</li>
+          <li class="toolkit-ad__chip">Door-to-door in 3 days?</li>
+        </ul>
+        <div class="toolkit-ad__photo-col">
+          <div class="toolkit-ad__bob">
+            <img src="assets/toolkit-heroes/pricing-wizard.webp" alt="Iridescent piggy bank with $3.90 price tag beside a shipping box" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="toolkit-ad__slide" data-slide="1">
+        <div class="toolkit-ad__copy">
+          <h3 class="toolkit-ad__headline">Which service do I need?</h3>
+          <p class="toolkit-ad__body">Cosmetics or batteries, 2kg or 500. Drop your shipment details &mdash; we&rsquo;ll point you at the ShipX service built for it.</p>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <a class="toolkit-ad__cta" href="/toolkits#product">Find my service
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.167 10h11.667M10 4.167L15.833 10 10 15.833" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="toolkit-ad__cta-ghost" href="/toolkits">Explore More Tools
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.167 10h11.667M10 4.167L15.833 10 10 15.833" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <ul class="toolkit-ad__chips" aria-label="Common service-finder questions">
+          <li class="toolkit-ad__chip">Which service for this?</li>
+          <li class="toolkit-ad__chip">Will it accept my goods?</li>
+          <li class="toolkit-ad__chip">Cosmetics or batteries?</li>
+        </ul>
+        <div class="toolkit-ad__photo-col">
+          <div class="toolkit-ad__bob">
+            <img src="assets/toolkit-heroes/product-wizard.webp" alt="Iridescent compass with floating service-label tags (Express, Postal, Sea Freight) and a Matched indicator" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="toolkit-ad__dots" role="tablist" aria-label="Toolkit slides">
+    <button type="button" class="toolkit-ad__dot" data-index="0" aria-label="Show slide 1 of 2" aria-current="true"></button>
+    <button type="button" class="toolkit-ad__dot" data-index="1" aria-label="Show slide 2 of 2"></button>
+  </div>
+</div>
+<script src="js/toolkit-carousel.js" defer></script>
+
+<!-- ═══ TOOLKIT CROSS-LINKS — services-verbatim (eyebrow swapped for blog context) ═══ -->
+<section class="toolkit">
+  <div class="container">
+    <header class="section-head" data-reveal="cascade" data-reveal-order="top-down">
+      <span class="eyebrow"><span class="dot"></span>Mentioned in this issue</span>
+      <h2>Tools that <span class="magenta-italic">do the math</span> for you.</h2>
+    </header>
+
+    <div class="toolkit-grid" data-rm-reveal="cascade">
+      <a class="toolkit-card featured" href="/toolkits#product">
+        <span class="featured-tag">Start here</span>
+        <span class="duo-icon" data-duo-name="product" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="2.6" fill="#FF00E5"></circle>
+          </svg>
+        </span>
+        <h3 class="toolkit-name">The right service, matched in a click.</h3>
+        <p class="toolkit-desc">Cosmetics or batteries, 2kg or 500. Drop your shipment details &mdash; we'll point you at the ShipX service built for it.</p>
+        <span class="toolkit-cta">Find my service
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </span>
+      </a>
+
+      <a class="toolkit-card" href="/toolkits#pricing">
+        <span class="duo-icon" data-duo-name="pricing" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="#FF00E5" stroke="none" opacity="0.35"></path>
+            <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <h3 class="toolkit-name">Live rates. No back-and-forth.</h3>
+        <p class="toolkit-desc">Market average plus ShipX's contracted pricing for your exact lane, in under 30 seconds.</p>
+        <span class="toolkit-cta">Get a rate
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </span>
+      </a>
+
+      <a class="toolkit-card" href="/toolkits#tracker">
+        <span class="duo-icon" data-duo-name="tracker" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <ellipse cx="12" cy="20" rx="3.8" ry="1.6" fill="#FF00E5" opacity="0.85"></ellipse>
+            <path d="M19.5 9.5c0 6-7.5 12-7.5 12s-7.5-6-7.5-12a7.5 7.5 0 0115 0z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="9.5" r="2.8" fill="#FF00E5" stroke="#fff" stroke-width="2"></circle>
+          </svg>
+        </span>
+        <h3 class="toolkit-name">Know where it is. Right now.</h3>
+        <p class="toolkit-desc">Real-time updates across every carrier and lane &mdash; one tracker, no carrier-site hopping.</p>
+        <span class="toolkit-cta">Track a shipment
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </span>
+      </a>
+    </div>
+    <div class="toolkit-footer">
+      <a class="toolkit-explore-cta" href="/toolkits">
+        Explore all toolkits
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+      </a>
+      <span class="toolkit-footer-meta">6 tools &middot; always free</span>
+    </div>
+  </div>
+</section>
+<script src="js/duo-icon-spy.js" defer></script>
+
+<!-- ═══ 5. RELATED ═══ -->
+<section class="section related-section">
+  <div class="container">
+    <div class="section-head-row" data-reveal="fade">
+      <header class="section-head">
+        <span class="eyebrow"><span class="dot"></span>Keep reading</span>
+        <h2>Related <span class="magenta-italic">field notes.</span></h2>
+      </header>
+      <a class="link-all" href="blog.html">All articles
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+      </a>
+    </div>
+
+    <div class="article-grid" data-reveal="cascade">
+
+      <a href="blog-post.html" class="art-card">
+        <div class="art-card-img">
+          <span class="art-card-cat">Customs</span>
+          <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?w=900&q=80&auto=format&fit=crop" alt="Cross-docking warehouse with palletised cargo">
+        </div>
+        <div class="art-card-body">
+          <h3 class="art-card-title">What CN22 vs. T11 Actually Costs You at the Border.</h3>
+          <div class="art-card-meta">
+            <span class="author">Chi Le</span>
+            <span class="sep">·</span>
+            <span>6 min</span>
+            <span class="sep">·</span>
+            <span>Apr 18, 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="art-card">
+        <div class="art-card-img">
+          <span class="art-card-cat">AI &amp; Routing</span>
+          <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=900&q=80&auto=format&fit=crop" alt="Parcel scanning station with dashboard data overlays">
+        </div>
+        <div class="art-card-body">
+          <h3 class="art-card-title">We Routed 80,000 Parcels with AI Last Quarter. The Honest Scorecard.</h3>
+          <div class="art-card-meta">
+            <span class="author">Hai Tran</span>
+            <span class="sep">·</span>
+            <span>8 min</span>
+            <span class="sep">·</span>
+            <span>Apr 4, 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="art-card">
+        <div class="art-card-img">
+          <span class="art-card-cat">Operations</span>
+          <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?w=900&q=80&auto=format&fit=crop&crop=entropy" alt="Pickup dock loading workflow at a ShipX origin warehouse">
+        </div>
+        <div class="art-card-body">
+          <h3 class="art-card-title">The 14-Hour Pickup Gap That Nobody Talks About.</h3>
+          <div class="art-card-meta">
+            <span class="author">Luyen Ngo</span>
+            <span class="sep">·</span>
+            <span>5 min</span>
+            <span class="sep">·</span>
+            <span>Mar 22, 2026</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6. NEWSLETTER ═══ -->
+<section class="newsletter" id="subscribe">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-copy">
+        <span class="eyebrow eyebrow--on-dark"><span class="dot"></span>The Lane Letter · Monthly</span>
+        <h2>One article. One curated piece. <em>Monthly.</em></h2>
+        <p>Industry deep-dives, ASEAN trade signals, and the lessons we learn moving 2.5M+ parcels a year. No fluff, no sales pitches.</p>
+      </div>
+
+      <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('.newsletter-input').value=''; this.querySelector('.newsletter-input').placeholder='You\u2019re on the list. Look for the next issue around the 1st.'; this.querySelector('.newsletter-input').blur();">
+        <div class="newsletter-form-label">Subscribe</div>
+        <div class="newsletter-form-row">
+          <input type="email" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit" class="newsletter-submit">
+            Subscribe
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+        <p class="newsletter-footnote">
+          <strong>Already shipping with ShipX?</strong> You&rsquo;re auto-subscribed &mdash; manage preferences in your dashboard.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="snx-footer" style="background:#fff;border-top:1px solid #E5E7EB;padding:56px 0 32px;">
+  <div class="snx-footer-grid" style="max-width:1440px;margin:0 auto;padding:0 64px;display:grid;grid-template-columns:1.8fr 1fr 1.5fr 1.2fr 1.6fr;gap:48px;align-items:flex-start;">
+    <div>
+      <img src="assets/logos/shipx-logo-dark.svg" alt="ShipX" style="height:28px;width:auto;display:block;margin-bottom:12px;">
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:8px;letter-spacing:-0.2px;">ASEAN's Next Generation Platform</div>
+      <div style="font-family:Inter,sans-serif;font-size:13px;color:#4D525C;line-height:1.6;max-width:260px;margin-bottom:20px;">Empowering businesses to ship globally with confidence. Our platform simplifies international shipping, customs, and logistics.</div>
+      <div style="display:flex;gap:8px;">
+        <a href="#" title="LinkedIn" class="snx-social-btn" style="width:32px;height:32px;border-radius:6px;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;color:#4D525C;background:#fff;transition:all 150ms ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="LinkedIn"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"/></svg>
+        </a>
+        <a href="#" title="Instagram" class="snx-social-btn" style="width:32px;height:32px;border-radius:6px;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;color:#4D525C;background:#fff;transition:all 150ms ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+        </a>
+        <a href="#" title="Facebook" class="snx-social-btn" style="width:32px;height:32px;border-radius:6px;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;color:#4D525C;background:#fff;transition:all 150ms ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="Facebook"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" title="Twitter / X" class="snx-social-btn" style="width:32px;height:32px;border-radius:6px;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;color:#4D525C;background:#fff;transition:all 150ms ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="Twitter"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+    <details class="snx-footer-col" open>
+      <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:16px;letter-spacing:-0.2px;">Quick Links<svg class="snx-footer-chev" width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Home</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Services</a>
+      </div>
+    </details>
+    <details class="snx-footer-col" open>
+      <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:16px;letter-spacing:-0.2px;">Toolkit<svg class="snx-footer-chev" width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Shipment Tracker</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">HS Code Generator</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Pricing Wizard</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Product Wizard</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Commodity Checker</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Transit Times</a>
+      </div>
+    </details>
+    <details class="snx-footer-col" open>
+      <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:16px;letter-spacing:-0.2px;">Legal<svg class="snx-footer-chev" width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Privacy Policy</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Terms and Conditions</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Compensation Policy</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Liability Policy</a>
+      </div>
+    </details>
+    <div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:16px;letter-spacing:-0.2px;">Contact</div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;flex-shrink:0;background:#F5F0FF;border:1px solid #EDE9FE;display:flex;align-items:center;justify-content:center;color:#4F378A;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <span style="font-family:Inter,sans-serif;font-size:13px;color:#4D525C;line-height:1.5;">+1012 3456 789</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;flex-shrink:0;background:#F5F0FF;border:1px solid #EDE9FE;display:flex;align-items:center;justify-content:center;color:#4F378A;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          </div>
+          <span style="font-family:Inter,sans-serif;font-size:13px;color:#4D525C;line-height:1.5;">info@shipx.asia</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;flex-shrink:0;background:#F5F0FF;border:1px solid #EDE9FE;display:flex;align-items:center;justify-content:center;color:#4F378A;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <span style="font-family:Inter,sans-serif;font-size:13px;color:#4D525C;line-height:1.5;">391B Orchard Road<br>#22 Ngee Ann City<br>Singapore, 238874</span>
+        </div>
+      </div>
+      <div style="border-top:1px solid #E5E7EB;padding-top:16px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:#1E2939;margin-bottom:12px;letter-spacing:-0.2px;">Resources</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="blog.html" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Blogs and Articles</a>
+          <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">FAQs</a>
+          <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">File A Claim</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="snx-footer-bottom" style="max-width:1440px;margin:32px auto 0;padding:24px 64px;border-top:1px solid #E5E7EB;">
+    <div style="font-family:Inter,sans-serif;font-size:12px;color:#9CA3AF;">© 2025 ShipX Copyright and rights reserved</div>
+  </div>
+</footer>
+
+<!-- ═══ Scripts ═══ -->
+<script src="js/reveal.js" defer></script>
+<script src="js/toc-spy.js" defer></script>
+
+<!-- ═══ MOTION SETTINGS FAB ═══ -->
+<div id="motion-fab-root" style="position:fixed;right:20px;bottom:20px;z-index:9999;font-family:Inter,sans-serif;">
+  <button id="motion-fab-btn" type="button" aria-label="Motion settings" aria-expanded="false" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:linear-gradient(135deg,#341834 0%,#4F378A 100%);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(20,0,99,0.35),inset 0 0 6px rgba(255,88,238,0.35);transition:transform 160ms ease, box-shadow 160ms ease;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </svg>
+  </button>
+  <div id="motion-fab-panel" role="dialog" aria-label="Motion settings" hidden style="position:absolute;right:0;bottom:60px;width:268px;background:#fff;border:1px solid rgba(196,180,255,0.4);border-radius:14px;box-shadow:0 12px 40px rgba(20,0,99,0.18),0 2px 6px rgba(20,0,99,0.08);padding:16px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#341834;">Motion settings</span>
+      <button id="motion-fab-close" type="button" aria-label="Close" style="width:24px;height:24px;border:none;background:transparent;color:#6B5B95;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:6px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <label for="motion-fab-toggle" style="display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;padding:8px 4px 4px;">
+      <span>
+        <span style="display:block;font-size:13px;font-weight:600;color:#1E2939;line-height:1.3;">Reduce motion</span>
+        <span style="display:block;font-size:11px;color:#6B5B95;line-height:1.4;margin-top:2px;">Pause hero animation &amp; particles.</span>
+      </span>
+      <span id="motion-fab-track" data-on="false" style="position:relative;flex-shrink:0;width:38px;height:22px;border-radius:999px;background:#E5E0F0;transition:background 160ms ease;">
+        <input id="motion-fab-toggle" type="checkbox" style="position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer;">
+        <span id="motion-fab-thumb" style="position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(20,0,99,0.25);transition:left 160ms ease;"></span>
+      </span>
+    </label>
+
+    <div style="border-top:1px solid #EDE9FE;margin:14px 0 0;padding:14px 0 4px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#341834;margin:0 0 8px;">Viewport</div>
+      <div style="display:flex;align-items:baseline;gap:6px;font-family:Inter,sans-serif;">
+        <span id="fab-vp-w" style="font-size:22px;font-weight:800;color:#1A0B2E;letter-spacing:-0.5px;line-height:1;">—</span>
+        <span style="font-size:11px;font-weight:500;color:#6B5B95;">px wide</span>
+        <span style="margin-left:auto;font-size:11px;color:#9C8FB8;" id="fab-vp-h">—h</span>
+      </div>
+      <div id="fab-vp-band" style="margin-top:8px;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#F5F0FF;color:#4F378A;border:1px solid #C4B4FF;">
+        <span id="fab-vp-dot" style="width:6px;height:6px;border-radius:50%;background:#4F378A;"></span>
+        <span id="fab-vp-label">—</span>
+      </div>
+      <div style="margin-top:10px;font-size:10px;color:#8B7FA8;line-height:1.5;font-family:Inter,sans-serif;">
+        Mobile &lt;640 &middot; Tablet 640&ndash;1023 &middot; Desktop &ge;1024 &middot; Large &ge;1280
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/motion-fab.js" defer></script>
+
+</body>
+</html>

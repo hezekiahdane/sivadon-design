@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+  --bg-deep:#070B16;
+  --bg-navy:#0C1224;
+  --light-bg:#F5F7FB;
+  --paper:#EAEEF7;
+  --ink:#0B0F1A;
+  --blue-1:#3B82F6;
+  --blue-2:#1E40AF;
+  --blue-glow:#2563EB;
+  --gold:#E3B860;
+  --gold-lt:#886318;
+  --gold-hi:#FFE9AF;
+  --gold-mid:#EFC163;
+  --gold-deep:#CE9633;
+  --gold-line:rgba(233,184,80,0.28);
+  --gold-glass:linear-gradient(155deg,rgba(233,184,80,0.16) 0%,rgba(255,255,255,0.04) 60%,rgba(255,255,255,0.02) 100%);
+  --gold-gradient:linear-gradient(96deg,var(--gold-hi) 0%,var(--gold-mid) 46%,var(--gold-deep) 100%);
+  --gold-gradient-on-light:linear-gradient(96deg,#8A5F12 0%,#7A5409 52%,#6B4A08 100%);
+  --muted-dk:#8A93A6;
+  --muted-lt:#484F5F;
+  --hero-ink:#112658;
+  --green-lt:#137C37;
+  --glass:rgba(255,255,255,0.08);
+  --glass-line:rgba(255,255,255,0.14);
+  --headline-font:'Instrument Sans',system-ui,sans-serif;
+  --headline-weight:700;
+  --mx:clamp(20px,6vw,120px);
+}
+  *{box-sizing:border-box;}
+  [style*="var(--headline-font)"]{font-weight:var(--headline-weight,700) !important;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg-deep);color:var(--paper);font-family:'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;}
+  a{color:var(--blue-1);text-decoration:none;}
+  a:hover{color:#93B4FB;}
+  ::selection{background:var(--blue-glow);color:#fff;}
+  @keyframes bgdrift{0%{background-position:0% 0%,100% 0%,50% 100%;}50%{background-position:20% 30%,70% 20%,40% 70%;}100%{background-position:0% 0%,100% 0%,50% 100%;}}
+  [data-mobile-menu] > div:last-child{opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
+  [data-mobile-menu] > button{display:none;}
+  @media (max-width:899px){ [data-mobile-menu] > button{display:inline-flex !important;} [data-navlinks]{display:none !important;} }
+  @media (max-width:860px){[data-article-grid]{grid-template-columns:1fr !important;}[data-article-rail]{position:static !important;max-height:none !important;}}
+  @media (max-width:640px){
+    footer div[style*="1.4fr"]{grid-template-columns:1fr 1fr 1fr !important;gap:20px !important;}
+    footer div[style*="1.4fr"] > div:first-child{grid-column:1 / -1 !important;}
+    [data-related-grid]{grid-template-columns:1fr !important;}
+  }
+</style>
+</helmet>
+
+<div style="position:relative;width:100%;min-height:100vh;overflow:clip;background:var(--bg-deep);">
+
+  <div style="position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 50% at 20% 10%, rgba(37,99,235,0.35), transparent 60%),
+      radial-gradient(50% 60% at 85% 15%, rgba(30,64,175,0.40), transparent 60%),
+      radial-gradient(70% 60% at 50% 100%, rgba(59,130,246,0.22), transparent 60%),
+      linear-gradient(180deg,#070B16,#0C1224);
+    background-size:140% 140%,140% 140%,160% 160%,100% 100%;
+    animation:bgdrift 26s ease-in-out infinite;"></div>
+
+  <div style="position:relative;z-index:1;">
+
+  <nav style="position:sticky;top:0;z-index:100;padding:clamp(10px,1.2vw,16px);">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:#FFFFFF;border:1px solid rgba(11,15,26,0.06);border-radius:clamp(18px,1.8vw,26px);box-shadow:0 16px 40px rgba(0,0,0,0.16);padding:12px clamp(20px,4vw,56px);">
+      <a href="Infi Group Homepage.dc.html" style="display:inline-flex;align-items:center;"><img src="uploads/infigroup-icon-color.png" alt="Infi Group" style="height:30px;width:auto;display:block;"></a>
+      <div data-navlinks="" style="display:flex;gap:34px;align-items:center;">
+        <a href="Infi Group Homepage.dc.html#stack" style="font-family:'Onest',system-ui,sans-serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-lt);transition:color .2s;" style-hover="color:var(--ink);">The stack</a>
+        <a href="Infi Group Homepage.dc.html#commerce" style="font-family:'Onest',system-ui,sans-serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-lt);transition:color .2s;" style-hover="color:var(--ink);">Commerce</a>
+        <a href="Infi Group Homepage.dc.html#distribution" style="font-family:'Onest',system-ui,sans-serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-lt);transition:color .2s;" style-hover="color:var(--ink);">Distribution</a>
+        <a href="Infi Group Homepage.dc.html#markets" style="font-family:'Onest',system-ui,sans-serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-lt);transition:color .2s;" style-hover="color:var(--ink);">Markets</a>
+        <a href="Infi Group Homepage.dc.html#ocean" style="font-family:'Onest',system-ui,sans-serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-lt);transition:color .2s;" style-hover="color:var(--ink);">Financing</a>
+      </div>
+      <div data-mobile-menu="" style="display:flex;align-items:center;gap:10px;position:relative;">
+        <a href="Infi Group Homepage.dc.html#connect" style="font-family:'Onest',system-ui,sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--blue-glow);padding:11px 20px;border-radius:10px;font-weight:500;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 8px 24px rgba(37,99,235,0.35);" style-hover="transform:translateY(-2px);box-shadow:0 12px 30px rgba(37,99,235,0.5);">Get in touch</a>
+        <button data-hamburger="sticky" aria-label="Open menu" style="display:none;align-items:center;justify-content:center;flex-direction:column;gap:4px;width:38px;height:38px;flex:0 0 auto;border-radius:10px;border:1px solid rgba(11,15,26,0.14);background:rgba(11,15,26,0.04);cursor:pointer;">
+          <span style="width:16px;height:2px;background:var(--ink);border-radius:2px;"></span>
+          <span style="width:16px;height:2px;background:var(--ink);border-radius:2px;"></span>
+          <span style="width:16px;height:2px;background:var(--ink);border-radius:2px;"></span>
+        </button>
+        <div data-menu-panel="" style="position:absolute;top:calc(100% + 10px);right:0;min-width:220px;background:#fff;border-radius:14px;border:1px solid rgba(11,15,26,0.08);box-shadow:0 20px 50px rgba(0,0,0,0.22);padding:10px;display:flex;flex-direction:column;gap:2px;z-index:80;">
+          <a href="Infi Group Homepage.dc.html#stack" style="font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding:10px 12px;border-radius:8px;" style-hover="background:rgba(37,99,235,0.08);">The stack</a>
+          <a href="Infi Group Homepage.dc.html#commerce" style="font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding:10px 12px;border-radius:8px;" style-hover="background:rgba(37,99,235,0.08);">Commerce</a>
+          <a href="Infi Group Homepage.dc.html#distribution" style="font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding:10px 12px;border-radius:8px;" style-hover="background:rgba(37,99,235,0.08);">Distribution</a>
+          <a href="Infi Group Homepage.dc.html#markets" style="font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding:10px 12px;border-radius:8px;" style-hover="background:rgba(37,99,235,0.08);">Markets</a>
+          <a href="Infi Group Homepage.dc.html#ocean" style="font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding:10px 12px;border-radius:8px;" style-hover="background:rgba(37,99,235,0.08);">Financing</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section style="padding:56px var(--mx) 0;">
+    <div style="max-width:800px;margin:0 auto;">
+      <div style="font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;background:var(--gold-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:18px;">Category</div>
+      <h1 style="font-family:var(--headline-font);font-weight:500;font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spacing:-0.02em;background:linear-gradient(180deg,#ffffff 0%,#ffffff 62%,#c8d0de 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin:0 0 18px;text-wrap:pretty;">Lorem ipsum dolor sit amet consectetur adipiscing elit.</h1>
+      <p style="font-family:'Onest',system-ui,sans-serif;font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:var(--paper);opacity:.78;margin:0 0 32px;max-width:60ch;">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud exercitation.</p>
+
+      <div style="display:flex;align-items:center;gap:14px;padding-bottom:36px;">
+        <sc-if value="{{ useInitials }}" hint-placeholder-val="{{ true }}">
+          <div aria-hidden="true" style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:var(--gold-gradient);display:flex;align-items:center;justify-content:center;font-family:var(--headline-font);font-weight:600;font-size:14px;color:#3B2A08;">JD</div>
+        </sc-if>
+        <sc-if value="{{ !useInitials }}" hint-placeholder-val="{{ false }}">
+          <div aria-hidden="true" style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;overflow:hidden;background:repeating-linear-gradient(135deg,rgba(255,255,255,0.09) 0px,rgba(255,255,255,0.09) 2px,transparent 2px,transparent 8px);border:1px solid var(--glass-line);"></div>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-family:'Onest',system-ui,sans-serif;font-size:14px;font-weight:500;color:var(--paper);">Jordan Doe</span>
+          <span style="font-family:'Onest',system-ui,sans-serif;font-size:12.5px;color:var(--muted-dk);">Senior Writer · 6 min read · Jan 12, 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showHeroPhoto }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width:1160px;margin:0 auto;padding:0 var(--mx) 8px;">
+      <div aria-hidden="true" style="position:relative;aspect-ratio:21/9;border-radius:20px;overflow:hidden;border:1px solid var(--glass-line);background:repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0px,rgba(255,255,255,0.05) 2px,transparent 2px,transparent 16px);display:flex;align-items:center;justify-content:center;">
+        <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:#6E7A94;">hero photo placeholder — 21:9</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ARTICLE -->
+  <section style="padding:56px var(--mx) 0;">
+    <div style="max-width:1160px;margin:0 auto;">
+      <div data-article-grid="" style="display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(20px,2.6vw,44px);align-items:stretch;">
+
+        <aside data-article-rail="" style="position:sticky;top:96px;align-self:start;height:fit-content;display:flex;flex-direction:column;gap:16px;max-height:calc(100vh - 140px);overflow-y:auto;">
+          <div style="padding:20px 12px;background:linear-gradient(155deg,rgba(255,255,255,0.10) 0%,rgba(255,255,255,0.04) 60%,rgba(255,255,255,0.02) 100%);border:1px solid var(--glass-line);border-radius:16px;backdrop-filter:blur(18px) saturate(1.1);-webkit-backdrop-filter:blur(18px) saturate(1.1);">
+            <div style="font-family:'Onest',system-ui,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9DB0D6;padding:0 11px 12px;">On this page</div>
+            <nav style="display:flex;flex-direction:column;gap:2px;">
+              <a href="#section-1" style="display:block;font-family:'Onest',system-ui,sans-serif;font-size:12.5px;line-height:1.45;padding:7px 11px;border-radius:8px;color:rgba(234,238,247,0.60);transition:color .2s ease,background .2s ease;" style-hover="color:#EAEEF7;background:rgba(255,255,255,0.06);">Lorem ipsum dolor sit amet</a>
+              <a href="#section-2" style="display:block;font-family:'Onest',system-ui,sans-serif;font-size:12.5px;line-height:1.45;padding:7px 11px;border-radius:8px;color:rgba(234,238,247,0.60);transition:color .2s ease,background .2s ease;" style-hover="color:#EAEEF7;background:rgba(255,255,255,0.06);">Consectetur adipiscing elit</a>
+              <a href="#section-3" style="display:block;font-family:'Onest',system-ui,sans-serif;font-size:12.5px;line-height:1.45;padding:7px 11px;border-radius:8px;color:rgba(234,238,247,0.60);transition:color .2s ease,background .2s ease;" style-hover="color:#EAEEF7;background:rgba(255,255,255,0.06);">Sed do eiusmod tempor incididunt</a>
+              <a href="#section-4" style="display:block;font-family:'Onest',system-ui,sans-serif;font-size:12.5px;line-height:1.45;padding:7px 11px;border-radius:8px;color:rgba(234,238,247,0.60);transition:color .2s ease,background .2s ease;" style-hover="color:#EAEEF7;background:rgba(255,255,255,0.06);">Ut labore et dolore magna aliqua</a>
+              <a href="#section-5" style="display:block;font-family:'Onest',system-ui,sans-serif;font-size:12.5px;line-height:1.45;padding:7px 11px;border-radius:8px;color:rgba(234,238,247,0.60);transition:color .2s ease,background .2s ease;" style-hover="color:#EAEEF7;background:rgba(255,255,255,0.06);">Ut enim ad minim veniam</a>
+            </nav>
+          </div>
+
+          <div style="padding:18px;display:flex;flex-direction:column;gap:12px;background:linear-gradient(155deg,rgba(255,255,255,0.10) 0%,rgba(255,255,255,0.04) 60%,rgba(255,255,255,0.02) 100%);border:1px solid var(--glass-line);border-radius:16px;backdrop-filter:blur(18px) saturate(1.1);-webkit-backdrop-filter:blur(18px) saturate(1.1);">
+            <div style="font-family:'Onest',system-ui,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9DB0D6;">Share</div>
+            <div style="display:flex;gap:8px;">
+              <button onClick="{{ copyLink }}" aria-label="Copy link" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.06);color:var(--paper);font-family:'Onest',system-ui,sans-serif;font-size:10px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease;" style-hover="background:rgba(255,255,255,0.12);border-color:rgba(147,180,251,0.5);">{{ copyGlyph }}</button>
+              <a href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.06);color:var(--paper);font-family:'Onest',system-ui,sans-serif;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease;" style-hover="background:rgba(255,255,255,0.12);border-color:rgba(147,180,251,0.5);">in</a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Share on X" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.06);color:var(--paper);font-family:'Onest',system-ui,sans-serif;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease;" style-hover="background:rgba(255,255,255,0.12);border-color:rgba(147,180,251,0.5);">X</a>
+              <a href="mailto:?subject=Lorem%20ipsum" aria-label="Share by email" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.06);color:var(--paper);font-family:'Onest',system-ui,sans-serif;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease;" style-hover="background:rgba(255,255,255,0.12);border-color:rgba(147,180,251,0.5);">@</a>
+            </div>
+          </div>
+        </aside>
+
+        <div style="background:rgba(255,255,255,0.86);backdrop-filter:blur(26px) saturate(1.15);-webkit-backdrop-filter:blur(26px) saturate(1.15);border:1px solid rgba(255,255,255,0.65);border-radius:20px;padding:clamp(24px,3vw,44px);box-shadow:0 20px 50px rgba(2,6,20,0.38),inset 0 1px 0 rgba(255,255,255,0.85);">
+
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:18px;line-height:1.65;font-weight:500;color:#1E293B;margin:0 0 32px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud exercitation ullamco laboris.</p>
+
+          <h2 id="section-1" style="scroll-margin-top:110px;font-family:var(--headline-font);font-weight:600;font-size:24px;line-height:1.25;color:var(--ink);letter-spacing:-0.01em;margin:0 0 14px;">Lorem ipsum dolor sit amet</h2>
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.75;color:#3B4559;margin:0 0 14px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.75;color:#3B4559;margin:0 0 24px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
+
+          <sc-if value="{{ showPullStats }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;align-items:center;gap:24px;padding:24px;border:1px solid rgba(11,15,26,0.08);border-radius:16px;background:rgba(37,99,235,0.05);margin:0 0 28px;">
+              <span style="flex:0 0 auto;font-family:var(--headline-font);font-weight:600;font-size:clamp(32px,4vw,42px);letter-spacing:-0.02em;background:var(--gold-gradient-on-light);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">48%</span>
+              <p style="margin:0;font-family:'Onest',system-ui,sans-serif;font-size:14.5px;line-height:1.55;color:#4B5468;">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+          </sc-if>
+
+          <h2 id="section-2" style="scroll-margin-top:110px;font-family:var(--headline-font);font-weight:600;font-size:24px;line-height:1.25;color:var(--ink);letter-spacing:-0.01em;margin:32px 0 14px;">Consectetur adipiscing elit</h2>
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.75;color:#3B4559;margin:0 0 14px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          <ul style="margin:0 0 20px;padding-left:22px;">
+            <li style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.7;color:#3B4559;margin-bottom:6px;">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.</li>
+            <li style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.7;color:#3B4559;margin-bottom:6px;">Consectetur adipisci velit sed quia non numquam eius modi tempora.</li>
+            <li style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.7;color:#3B4559;">Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</li>
+          </ul>
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.75;color:#3B4559;margin:0 0 24px;">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
+
+          <h2 id="section-3" style="scroll-margin-top:110px;font-family:var(--headline-font);font-weight:600;font-size:24px;line-height:1.25;color:var(--ink);letter-spacing:-0.01em;margin:32px 0 14px;">Sed do eiusmod tempor incididunt</h2>
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.75;color:#3B4559;margin:0 0 24px;">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+          <sc-if value="{{ showPullStats }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;align-items:center;gap:24px;padding:24px;border:1px solid rgba(11,15,26,0.08);border-radius:16px;background:rgba(37,99,235,0.05);margin:0 0 28px;">
+              <span style="flex:0 0 auto;font-family:var(--headline-font);font-weight:600;font-size:clamp(32px,4vw,42px);letter-spacing:-0.02em;background:var(--gold-gradient-on-light);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">3.4x</span>
+              <p style="margin:0;font-family:'Onest',system-ui,sans-serif;font-size:14.5px;line-height:1.55;color:#4B5468;">Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            </div>
+          </sc-if>
+
+          <h2 id="section-4" style="scroll-margin-top:110px;font-family:var(--headline-font);font-weight:600;font-size:24px;line-height:1.25;color:var(--ink);letter-spacing:-0.01em;margin:32px 0 14px;">Ut labore et dolore magna aliqua</h2>
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.75;color:#3B4559;margin:0 0 14px;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.</p>
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.75;color:#3B4559;margin:0 0 24px;">Occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+
+          <h2 id="section-5" style="scroll-margin-top:110px;font-family:var(--headline-font);font-weight:600;font-size:24px;line-height:1.25;color:var(--ink);letter-spacing:-0.01em;margin:32px 0 14px;">Ut enim ad minim veniam</h2>
+          <p style="font-family:'Onest',system-ui,sans-serif;font-size:16px;line-height:1.75;color:#3B4559;margin:0 0 40px;">Et harum quidem rerum facilis est et expedita distinctio, nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+
+          <div style="display:flex;gap:18px;align-items:flex-start;padding-top:28px;border-top:1px solid rgba(11,15,26,0.1);">
+            <sc-if value="{{ useInitials }}" hint-placeholder-val="{{ true }}">
+              <div aria-hidden="true" style="flex:0 0 auto;width:72px;height:72px;border-radius:50%;background:var(--gold-gradient);display:flex;align-items:center;justify-content:center;font-family:var(--headline-font);font-weight:600;font-size:22px;color:#3B2A08;">JD</div>
+            </sc-if>
+            <sc-if value="{{ !useInitials }}" hint-placeholder-val="{{ false }}">
+              <div aria-hidden="true" style="flex:0 0 auto;width:72px;height:72px;border-radius:50%;overflow:hidden;background:repeating-linear-gradient(135deg,rgba(11,15,26,0.06) 0px,rgba(11,15,26,0.06) 2px,transparent 2px,transparent 8px);border:1px solid rgba(11,15,26,0.1);"></div>
+            </sc-if>
+            <div>
+              <div style="font-family:var(--headline-font);font-weight:600;font-size:16px;color:var(--ink);margin-bottom:2px;">Jordan Doe</div>
+              <div style="font-family:'Onest',system-ui,sans-serif;font-size:13px;color:#7C88A2;margin-bottom:10px;">Senior Writer, Infi Group</div>
+              <p style="font-family:'Onest',system-ui,sans-serif;font-size:14.5px;line-height:1.6;color:#4B5468;margin:0;max-width:52ch;">Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <div style="max-width:1240px;margin:0 auto;padding:72px var(--mx) 100px;">
+    <div style="font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-dk);margin-bottom:22px;">Related articles</div>
+    <div data-related-grid="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+      <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+        <a href="#" style="display:flex;flex-direction:column;text-decoration:none;border-radius:22px;background:linear-gradient(155deg,rgba(255,255,255,0.13) 0%,rgba(255,255,255,0.055) 46%,rgba(255,255,255,0.025) 100%);border:1px solid var(--glass-line);backdrop-filter:blur(18px) saturate(1.1);-webkit-backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 20px 50px rgba(4,9,26,0.42);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;" style-hover="transform:translateY(-4px);border-color:rgba(147,180,251,0.42);box-shadow:0 28px 62px rgba(4,9,26,0.5),0 0 34px rgba(37,99,235,0.18);">
+          <div aria-hidden="true" style="position:relative;margin:14px 14px 0;border-radius:15px;overflow:hidden;aspect-ratio:16/10;background:repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0px,rgba(255,255,255,0.05) 2px,transparent 2px,transparent 14px);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.06em;color:#6E7A94;">article photo</span>
+            <span style="position:absolute;top:12px;left:12px;font-family:'Onest',system-ui,sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#EAEEF7;background:rgba(6,11,26,0.52);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:6px 10px;">{{ r.category }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding:22px clamp(20px,2vw,24px) clamp(24px,2.2vw,28px);flex:1;">
+            <h3 style="font-family:var(--headline-font);font-weight:500;font-size:18px;line-height:1.28;letter-spacing:-0.01em;color:#EAEEF7;margin:0;text-wrap:pretty;">{{ r.title }}</h3>
+            <div style="font-family:'Onest',system-ui,sans-serif;font-size:12px;letter-spacing:.05em;color:#93B4FB;">{{ r.meta }}</div>
+            <p style="font-family:'Onest',system-ui,sans-serif;font-size:13.5px;line-height:1.55;color:#B9C6DE;opacity:.9;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ r.excerpt }}</p>
+            <span style="font-family:'Onest',system-ui,sans-serif;font-size:11px;letter-spacing:.1em;color:#93B4FB;margin-top:auto;padding-top:2px;">Read article →</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <footer style="position:relative;z-index:1;background:transparent;padding:24px var(--mx) 50px;border-top:none;">
+    <div style="display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px;margin-bottom:48px;">
+      <div>
+        <img src="uploads/infigroup-full-horizontal-white.png" alt="Infi Group" style="height:40px;width:221px;display:block;margin-bottom:16px;">
+        <p style="font-family:'Onest',system-ui,sans-serif;font-size:14px;line-height:1.6;color:var(--muted-dk);max-width:none;margin:0;">Building one of the world's fastest-growing Commerce and distribution across Southeast Asia. Headquartered in Singapore.</p>
+      </div>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="4">
+        <div>
+          <div style="font-family:'Onest',system-ui,sans-serif;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#9DB0D6;margin-bottom:16px;">{{ col.head }}</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <sc-for list="{{ col.items }}" as="it" hint-placeholder-count="4"><a href="{{ it.href }}" style="font-family:'Onest',system-ui,sans-serif;font-size:14px;color:var(--muted-dk);text-decoration:none;cursor:pointer;transition:color .2s ease;" style-hover="color:var(--paper);">{{ it.t }}</a></sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;font-family:'Onest',system-ui,sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted-dk);">Infi Commerce Pte Ltd · Singapore · © 2026 Infi Group. All rights reserved.</div>
+  </footer>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1400},&quot;showHeroPhoto&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showPullStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Article body&quot;},&quot;avatarStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Initials monogram&quot;,&quot;Photo placeholder&quot;],&quot;default&quot;:&quot;Initials monogram&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Author&quot;}}">
+class Component extends DCLogic {
+  state = { copied: false };
+
+  componentDidMount(){
+    var setPanel=function(p,open){ if(!p)return; p._open=open; p.style.opacity=open?'1':'0'; p.style.transform=open?'translateY(0)':'translateY(-8px)'; p.style.pointerEvents=open?'auto':'none'; };
+    document.addEventListener('click',function(e){
+      var w=e.target.closest('[data-mobile-menu]');
+      var btn=e.target.closest('button');
+      if(w && btn && w.contains(btn)){ var p=w.lastElementChild; setPanel(p, !p._open); e.stopPropagation(); return; }
+      if(w){ var lk=e.target.closest('a'); if(lk) setPanel(w.lastElementChild,false); return; }
+      document.querySelectorAll('[data-mobile-menu]').forEach(function(mw){ setPanel(mw.lastElementChild,false); });
+    },true);
+  }
+
+  renderVals(){
+    return {
+      showHeroPhoto: this.props.showHeroPhoto ?? true,
+      showPullStats: this.props.showPullStats ?? true,
+      useInitials: (this.props.avatarStyle ?? 'Initials monogram') === 'Initials monogram',
+      copied: this.state.copied,
+      copyGlyph: this.state.copied ? '✓' : 'CL',
+      copyLink: () => {
+        const url = window.location.href;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).catch(() => {});
+        }
+        this.setState({ copied: true });
+        clearTimeout(this._copyTimer);
+        this._copyTimer = setTimeout(() => this.setState({ copied: false }), 1800);
+      },
+      related: [
+        { category: 'Category', title: 'Lorem ipsum dolor sit amet consectetur.', meta: '5 min read · Feb 2026', excerpt: 'Adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+        { category: 'Category', title: 'Ut enim ad minim veniam quis nostrud.', meta: '4 min read · Jan 2026', excerpt: 'Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.' },
+        { category: 'Category', title: 'Duis aute irure dolor in reprehenderit.', meta: '7 min read · Dec 2025', excerpt: 'In voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.' }
+      ],
+      footerCols: [
+        {head:'Businesses', items:[{t:'Pontello',href:'https://pontellobrands.com/'},{t:'InfiLogis',href:'https://infilogis.ai'},{t:'Amilo',href:'https://amilo.co'},{t:'ShipX',href:'https://shipx.asia'}]},
+        {head:'Markets', items:['Thailand','Vietnam','Malaysia','Singapore','Indonesia','Philippines'].map(t=>({t, href:'Infi Group Homepage.dc.html#markets'}))},
+        {head:'Company', items:[
+          {t:'Careers', href:'Infi Group Careers.dc.html'},
+          {t:'Contact', href:'Infi Group Homepage.dc.html#connect'},
+          {t:'In the News', href:'Infi Group Blog Catalog.dc.html'},
+          {t:'Terms of Service', href:'Terms of Service.dc.html'},
+          {t:'Privacy Policy', href:'Privacy Policy.dc.html'}
+        ]}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

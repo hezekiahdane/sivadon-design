@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Kanit:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F3F3; -webkit-font-smoothing: antialiased; }
+  a { color: #00B085; text-decoration: none; }
+  a:hover { color: #F58800; }
+  ::selection { background: #CCEFE7; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:grid;grid-template-columns:260px minmax(0,1fr);font-family:'Public Sans',system-ui,sans-serif;color:#19191D;background:#F3F3F3">
+
+  <aside style="position:sticky;top:0;height:100vh;overflow-y:auto;background:#19191D;color:#FFFFFF;padding:32px 24px;display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="./assets/SivadonLogo-Full-White.svg" alt="Sivadon" style="height:26px" />
+      </div>
+      <div style="font-family:Sarabun,sans-serif;font-size:12px;line-height:1.5;color:#8B8B8D">Design System &amp; Brand Guidelines<br />v1.0 — August 2026</div>
+    </div>
+
+    <nav style="display:flex;flex-direction:column;gap:2px">
+      <sc-for list="{{ nav }}" as="item" hint-placeholder-count="8">
+        <a href="{{ item.href }}" style="display:flex;gap:12px;align-items:baseline;padding:9px 12px;border-radius:12px;font-size:14px;color:#C5C5C6" style-hover="background:#2A2A2E;color:#FFFFFF">
+          <span style="font-family:Sarabun,sans-serif;font-size:11px;color:#8B8B8D">{{ item.num }}</span>
+          <span>{{ item.label }}</span>
+        </a>
+      </sc-for>
+    </nav>
+
+    <div style="margin-top:auto;font-family:Sarabun,sans-serif;font-size:11px;line-height:1.6;color:#8B8B8D;border-top:1px solid #35353A;padding-top:16px">
+      Maintained by Marketing.<br />Questions: contact@sdcl.co.th
+    </div>
+  </aside>
+
+  <main style="min-width:0">
+
+    <section style="background:#19191D;color:#FFFFFF;padding:96px 64px 88px;position:relative;overflow:hidden">
+      <img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/World-Map-desktop-1.svg" alt="" style="position:absolute;right:-60px;top:50%;transform:translateY(-50%);height:520px;opacity:0.22;pointer-events:none" />
+      <div style="position:relative;max-width:820px;display:flex;flex-direction:column;gap:26px">
+        <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.18em;color:#00B085">BRAND SYSTEM · 2026 EDITION</div>
+        <h1 style="font-weight:700;font-size:clamp(36px,5vw,60px);line-height:1.06;letter-spacing:-0.02em;margin:0;text-wrap:balance">One brand, applied consistently, everywhere we show up.</h1>
+        <p style="font-size:19px;line-height:1.6;color:#C5C5C6;margin:0;max-width:640px;text-wrap:pretty">Sivadon is a Thailand-based logistics partner helping local businesses grow nationwide and global brands scale across Southeast Asia. This system documents what the website already does, fills the gaps, and gives everyone who makes something on our behalf the same components, words and rules.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+          <a href="#colour" style="display:inline-flex;align-items:center;gap:8px;background:#00B085;color:#19191D;padding:14px 26px;border-radius:16px;font-size:16px;font-weight:700" style-hover="background:#00C795;color:#19191D">Start with colour</a>
+          <a href="#components" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #55555A;color:#FFFFFF;padding:14px 26px;border-radius:16px;font-size:16px;font-weight:700" style-hover="border-color:#FFFFFF;color:#FFFFFF">Jump to components</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 Foundation -->
+    <section id="foundation" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#FFFFFF">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">01</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Brand foundation</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">Everything downstream — a swatch, a button, a caption — should be traceable to one of these three ideas.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-bottom:52px">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+          <div style="border:1px solid #E4E4E5;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;background:#FFFFFF">
+            <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">{{ p.kicker }}</div>
+            <h3 style="font-weight:700;font-size:22px;margin:0;letter-spacing:-0.01em">{{ p.title }}</h3>
+            <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0;text-wrap:pretty">{{ p.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <h3 style="font-weight:700;font-size:22px;margin:0 0 20px">Logo usage</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:20px">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden">
+          <div style="background:#F3F3F3;padding:56px 32px;display:flex;align-items:center;justify-content:center;min-height:200px">
+            <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon logo" style="width:220px;max-width:100%;padding:26px;outline:1px dashed #C5C5C6;outline-offset:24px" />
+          </div>
+          <div style="padding:18px 22px;font-size:13px;line-height:1.6;color:#55555A;border-top:1px solid #E4E4E5">logo-sivadon.svg — the master, as served in the site header. Clear space on all sides equals the height of the mark.</div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden">
+          <div style="background:#19191D;padding:56px 32px;display:flex;align-items:center;justify-content:center;min-height:200px">
+            <img src="./assets/SivadonLogo-Full-White.svg" alt="Sivadon logo reversed" style="width:200px;max-width:100%" />
+          </div>
+          <div style="padding:18px 22px;font-size:13px;line-height:1.6;color:#55555A;border-top:1px solid #E4E4E5">Logo.svg — the reversed lockup, used in the dark contact band. Same construction, white type.</div>
+        </div>
+      </div>
+
+      <div style="border:1px dashed #C5C5C6;border-radius:16px;padding:20px 22px;font-family:Sarabun,sans-serif;font-size:13px;line-height:1.7;color:#8B8B8D;margin-bottom:36px">
+        [ live files ] Everything on this page is served from your own site. Master: <span style="color:#55555A">2024/08/logo-sivadon.svg</span>. Reversed: <span style="color:#55555A">2024/06/Logo.svg</span>. Wide contact-block variant: <span style="color:#55555A">2024/06/Logo-1.svg</span>. Square mark: <span style="color:#55555A">cropped-Group-270x270.jpg</span> — a JPG, which is why it has a hard edge at small sizes. It needs redrawing as an SVG.
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+        <div style="border:1px solid #E4E4E5;border-top:3px solid #00B085;border-radius:16px;padding:24px">
+          <div style="font-family:Sarabun,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#00875F;margin-bottom:14px">DO</div>
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px;font-size:15px;line-height:1.55;color:#55555A">
+            <sc-for list="{{ logoDo }}" as="r" hint-placeholder-count="4"><li>{{ r }}</li></sc-for>
+          </ul>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-top:3px solid #D0342C;border-radius:16px;padding:24px">
+          <div style="font-family:Sarabun,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#D0342C;margin-bottom:14px">DON'T</div>
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px;font-size:15px;line-height:1.55;color:#55555A">
+            <sc-for list="{{ logoDont }}" as="r" hint-placeholder-count="4"><li>{{ r }}</li></sc-for>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="logos" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#F3F3F3">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">02</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Logo set</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">Six approved constructions. Everything else — a new arrangement, a new colour, the mark redrawn — needs sign-off. Every tile below is a structural placeholder at the correct proportions; the artwork drops in unchanged.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:20px">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden">
+          <div style="background:#FFFFFF;min-height:190px;display:flex;align-items:center;justify-content:center;padding:36px">
+            <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon primary logo" style="width:220px;max-width:100%" />
+          </div>
+          <div style="padding:16px 20px;border-top:1px solid #E4E4E5"><div style="font-size:14px;font-weight:700;margin-bottom:4px">A · Primary horizontal</div><div style="font-size:13px;line-height:1.5;color:#55555A">The default. Website header, decks, documents, email signature.</div></div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden">
+          <div style="background:#FFFFFF;min-height:190px;display:flex;align-items:center;justify-content:center;padding:36px">
+            <img src="./assets/SivadonLogo-Stacked.svg" alt="Sivadon stacked logo" style="width:180px;max-width:100%" />
+          </div>
+          <div style="padding:16px 20px;border-top:1px solid #E4E4E5"><div style="font-size:14px;font-weight:700;margin-bottom:4px">B · Stacked</div><div style="font-size:13px;line-height:1.5;color:#55555A">Square and narrow spaces: social profiles, vehicle doors, roll-up banners.</div></div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden">
+          <div style="background:#19191D;min-height:190px;display:flex;align-items:center;justify-content:center;padding:36px">
+            <img src="./assets/SivadonLogo-Full-White.svg" alt="Sivadon reversed lockup" style="width:200px;max-width:100%" />
+          </div>
+          <div style="padding:16px 20px;border-top:1px solid #E4E4E5"><div style="font-size:14px;font-weight:700;margin-bottom:4px">C · Reversed</div><div style="font-size:13px;line-height:1.5;color:#55555A">On Mono 100 and on photography at 40%+ dark overlay. Mark stays green.</div></div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden">
+          <div style="background:#FFFFFF;min-height:190px;display:flex;align-items:center;justify-content:center;padding:36px">
+            <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon single colour" style="width:210px;max-width:100%;filter:grayscale(1) brightness(0.28)" />
+          </div>
+          <div style="padding:16px 20px;border-top:1px solid #E4E4E5"><div style="font-size:14px;font-weight:700;margin-bottom:4px">D · Single-colour</div><div style="font-size:13px;line-height:1.5;color:#55555A">One-colour print, fax, engraving, embroidery, customs paperwork. All Mono 100 or all white.</div></div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden">
+          <div style="background:#F3F3F3;min-height:190px;display:flex;align-items:center;justify-content:center;gap:20px;padding:36px">
+            <div style="height:72px;width:72px;border-radius:18px;background:#19191D;display:flex;align-items:center;justify-content:center"><img src="./assets/SivadonLogo-Icon-Green.svg" alt="mark 72" style="width:46%;height:46%;object-fit:contain" /></div>
+            <div style="height:44px;width:44px;border-radius:11px;background:#19191D;display:flex;align-items:center;justify-content:center"><img src="./assets/SivadonLogo-Icon-Green.svg" alt="mark 44" style="width:46%;height:46%;object-fit:contain" /></div>
+            <div style="height:28px;width:28px;border-radius:7px;background:#19191D;display:flex;align-items:center;justify-content:center"><img src="./assets/SivadonLogo-Icon-Green.svg" alt="mark 28" style="width:46%;height:46%;object-fit:contain" /></div>
+          </div>
+          <div style="padding:16px 20px;border-top:1px solid #E4E4E5"><div style="font-size:14px;font-weight:700;margin-bottom:4px">E · Mark only</div><div style="font-size:13px;line-height:1.5;color:#55555A">Only where SIVADON already appears in the same view, or below 24px of wordmark height.</div></div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden">
+          <div style="background:#F3F3F3;min-height:190px;display:flex;align-items:center;justify-content:center;gap:20px;padding:36px">
+            <div style="width:64px;height:64px;border-radius:14px;background:#19191D;display:flex;align-items:center;justify-content:center"><img src="./assets/SivadonLogo-Icon-Green.svg" alt="app icon 64" style="width:46%;height:46%;object-fit:contain" /></div>
+            <div style="width:40px;height:40px;border-radius:999px;background:#19191D;display:flex;align-items:center;justify-content:center"><img src="./assets/SivadonLogo-Icon-Green.svg" alt="avatar 40" style="width:46%;height:46%;object-fit:contain" /></div>
+            <div style="width:24px;height:24px;border-radius:5px;background:#19191D;display:flex;align-items:center;justify-content:center"><img src="./assets/SivadonLogo-Icon-Green.svg" alt="favicon 24" style="width:46%;height:46%;object-fit:contain" /></div>
+          </div>
+          <div style="padding:16px 20px;border-top:1px solid #E4E4E5"><div style="font-size:14px;font-weight:700;margin-bottom:4px">F · Avatar, app icon, favicon</div><div style="font-size:13px;line-height:1.5;color:#55555A">Mark centred on Mono 100, 46% of the tile. Rounded square for app stores, circle for social, 5px radius at 24px and below.</div></div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:20px">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:28px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:20px">CLEAR SPACE</div>
+          <div style="background:#F3F3F3;border-radius:12px;padding:44px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+            <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="clear space" style="width:200px;max-width:100%;padding:34px;outline:1px dashed #00B085" />
+          </div>
+          <p style="font-size:14px;line-height:1.6;color:#55555A;margin:0">The exclusion zone on every side equals <strong style="font-weight:700;color:#19191D">X</strong>, the height of the mark. No type, rule, image edge or page trim enters it.</p>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:28px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:20px">MINIMUM SIZES</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid #E4E4E5"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="" style="width:120px" /><span style="font-family:Sarabun,sans-serif;font-size:13px;color:#8B8B8D;white-space:nowrap">120px / 32mm wide</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid #E4E4E5"><div style="display:flex;flex-direction:column;align-items:center;gap:6px"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/cropped-Group-270x270.jpg" alt="" style="width:18px;height:18px;object-fit:cover;border-radius:5px" /><img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="" style="width:64px" /></div><span style="font-family:Sarabun,sans-serif;font-size:13px;color:#8B8B8D;white-space:nowrap">64px / 18mm wide</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/cropped-Group-270x270.jpg" alt="" style="width:16px;height:16px;object-fit:cover;border-radius:4px" /><span style="font-family:Sarabun,sans-serif;font-size:13px;color:#8B8B8D;white-space:nowrap">16px / 5mm — mark only</span></div>
+          </div>
+          <p style="font-size:14px;line-height:1.6;color:#55555A;margin:16px 0 0">Below the horizontal minimum, switch to stacked. Below the stacked minimum, switch to the mark.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:28px;margin-bottom:20px">
+        <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:20px">MISUSE — NONE OF THESE ARE APPROVED</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="background:#F3F3F3;border-radius:12px;height:78px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="" style="width:120px;filter:hue-rotate(-140deg) saturate(2.4)" />
+              <div style="position:absolute;top:7px;right:9px;color:#D0342C;font-size:15px;font-weight:700">✕</div>
+            </div>
+            <div style="font-size:13px;line-height:1.45;color:#55555A">Mark recoloured to Orange</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="background:#F3F3F3;border-radius:12px;height:78px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="" style="width:120px;filter:grayscale(1) brightness(1.5) sepia(1) hue-rotate(90deg) saturate(6)" />
+              <div style="position:absolute;top:7px;right:9px;color:#D0342C;font-size:15px;font-weight:700">✕</div>
+            </div>
+            <div style="font-size:13px;line-height:1.45;color:#55555A">Wordmark in green</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="background:#F3F3F3;border-radius:12px;height:78px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="" style="width:120px;transform:scaleX(1.45)" />
+              <div style="position:absolute;top:7px;right:9px;color:#D0342C;font-size:15px;font-weight:700">✕</div>
+            </div>
+            <div style="font-size:13px;line-height:1.45;color:#55555A">Stretched or condensed</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="background:#F3F3F3;border-radius:12px;height:78px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="" style="width:120px;transform:rotate(-12deg)" />
+              <div style="position:absolute;top:7px;right:9px;color:#D0342C;font-size:15px;font-weight:700">✕</div>
+            </div>
+            <div style="font-size:13px;line-height:1.45;color:#55555A">Rotated or angled</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="background:#F3F3F3;border-radius:12px;height:78px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <div style="font-weight:400;font-size:15px;letter-spacing:0.2em;color:#19191D;font-family:Kanit,sans-serif">SIVADON</div>
+              <div style="position:absolute;top:7px;right:9px;color:#D0342C;font-size:15px;font-weight:700">✕</div>
+            </div>
+            <div style="font-size:13px;line-height:1.45;color:#55555A">Reset in another font or tracking</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="background:#F3F3F3;border-radius:12px;height:78px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="" style="width:120px;filter:drop-shadow(2px 3px 2px rgba(0,0,0,0.45))" />
+              <div style="position:absolute;top:7px;right:9px;color:#D0342C;font-size:15px;font-weight:700">✕</div>
+            </div>
+            <div style="font-size:13px;line-height:1.45;color:#55555A">Shadow, glow, bevel or gradient</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden">
+        <div style="display:grid;grid-template-columns:minmax(120px,1.4fr) minmax(80px,1fr) minmax(90px,1fr) minmax(140px,1.6fr);gap:16px;padding:14px 24px;background:#F3F3F3;border-bottom:1px solid #E4E4E5">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">FILE</div><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">FORMAT</div><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">COLOUR</div><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">USE</div>
+        </div>
+        <sc-for list="{{ files }}" as="fl" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:minmax(120px,1.4fr) minmax(80px,1fr) minmax(90px,1fr) minmax(140px,1.6fr);gap:16px;padding:14px 24px;border-bottom:1px solid #E4E4E5;font-size:14px;align-items:baseline">
+            <div style="font-family:Sarabun,sans-serif;font-size:13px;overflow-wrap:anywhere">{{ fl.name }}</div>
+            <div style="color:#55555A">{{ fl.format }}</div>
+            <div style="color:#55555A">{{ fl.colour }}</div>
+            <div style="color:#55555A;line-height:1.45">{{ fl.use }}</div>
+          </div>
+        </sc-for>
+        <div style="padding:16px 24px;font-family:Sarabun,sans-serif;font-size:13px;line-height:1.6;color:#8B8B8D">The site serves four: <span style="color:#55555A">logo-sivadon.svg</span>, <span style="color:#55555A">Logo.svg</span>, <span style="color:#55555A">Logo-1.svg</span> and the <span style="color:#55555A">cropped-Group</span> favicon JPGs. Everything else in this matrix — EPS, stacked, single-colour, a vector mark — still needs producing.</div>
+      </div>
+    </section>
+
+    <!-- 03 Colour -->
+    <section id="colour" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#F3F3F3">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">03</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Colour</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">Sivadon Green is the brand. Orange is the single conversion colour — the Contact Us and Submit buttons, nothing else. Everything in between is the Mono ramp. Token names below match what's already in the site's CSS.</p>
+
+      <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:14px">BRAND</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:40px">
+        <div style="border-radius:16px;overflow:hidden;border:1px solid #E4E4E5;background:#FFFFFF">
+          <div style="height:120px;background:#00B085"></div>
+          <div style="padding:16px 18px;display:flex;flex-direction:column;gap:3px">
+            <div style="font-size:15px;font-weight:700">Sivadon 80 · Primary</div>
+            <div style="font-family:Sarabun,sans-serif;font-size:13px;color:#8B8B8D">#00B085 · --Sivadon-80</div>
+            <div style="font-size:13px;color:#8B8B8D;line-height:1.5;margin-top:5px">Links, active states, mark, brand fills</div>
+          </div>
+        </div>
+        <div style="border-radius:16px;overflow:hidden;border:1px solid #E4E4E5;background:#FFFFFF">
+          <div style="height:120px;background:#F58800"></div>
+          <div style="padding:16px 18px;display:flex;flex-direction:column;gap:3px">
+            <div style="font-size:15px;font-weight:700">Orange 80 · Action</div>
+            <div style="font-family:Sarabun,sans-serif;font-size:13px;color:#8B8B8D">#F58800 · --Orange-80</div>
+            <div style="font-size:13px;color:#8B8B8D;line-height:1.5;margin-top:5px">One CTA per view. Also input focus.</div>
+          </div>
+        </div>
+        <div style="border-radius:16px;overflow:hidden;border:1px solid #E4E4E5;background:#FFFFFF">
+          <div style="height:120px;background:#19191D"></div>
+          <div style="padding:16px 18px;display:flex;flex-direction:column;gap:3px">
+            <div style="font-size:15px;font-weight:700">Mono 100</div>
+            <div style="font-family:Sarabun,sans-serif;font-size:13px;color:#8B8B8D">#19191D · --Mono-100</div>
+            <div style="font-size:13px;color:#8B8B8D;line-height:1.5;margin-top:5px">All body copy, headings, dark fills</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:14px">MONO RAMP</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px">
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#19191D"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Mono 100</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#19191D</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#55555A"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Mono 75</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#55555A</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#8B8B8D"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Mono 50</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#8B8B8D</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#C5C5C6"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Mono 25</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#C5C5C6</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#F3F3F3"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Mono 15</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#F3F3F3</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#FFFFFF;border-bottom:1px solid #E4E4E5"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Mono 0</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#FFFFFF</div></div></div>
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:0 0 40px;max-width:660px">Mono 75 and Mono 15 are the two additions to the live set. Mono 75 gives secondary body copy a step that passes AA on white — Mono 50 does not at body size.</p>
+
+      <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:14px">TINTS — NEW, FOR BACKGROUNDS AND STATES</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:40px">
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#00875F"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Sivadon 100</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#00875F</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#00C795"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Sivadon 60</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#00C795</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#CCEFE7"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Sivadon 15</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#CCEFE7</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#D97800"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Orange 100</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#D97800</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#FDE7CC"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Orange 15</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#FDE7CC</div></div></div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:64px;background:#E4E4E5"></div><div style="padding:11px 13px"><div style="font-size:13px;font-weight:600">Mono 20</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">#E4E4E5</div></div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:16px;padding:26px">
+          <h4 style="font-weight:700;font-size:17px;margin:0 0 8px">Contrast — one thing to fix</h4>
+          <p style="font-size:14px;line-height:1.6;color:#55555A;margin:0 0 16px">White text on Sivadon Green reads 2.8:1 and on Orange 2.5:1. Both fail AA at any size. The live Submit button and the green buttons currently do this. Use Mono 100 text on brand fills instead — it clears AA comfortably and looks sharper.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <div style="background:#00B085;color:#19191D;padding:12px 20px;border-radius:16px;font-weight:700;font-size:15px">6.3 : 1 ✓</div>
+            <div style="background:#00B085;color:#FFFFFF;padding:12px 20px;border-radius:16px;font-weight:700;font-size:15px">2.8 : 1 ✕</div>
+            <div style="background:#F58800;color:#19191D;padding:12px 20px;border-radius:16px;font-weight:700;font-size:15px">7.1 : 1 ✓</div>
+            <div style="background:#F58800;color:#FFFFFF;padding:12px 20px;border-radius:16px;font-weight:700;font-size:15px">2.5 : 1 ✕</div>
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:16px;padding:26px">
+          <h4 style="font-weight:700;font-size:17px;margin:0 0 16px">Contrast reference</h4>
+          <div style="display:flex;flex-direction:column;gap:0">
+            <sc-for list="{{ contrast }}" as="c" hint-placeholder-count="5">
+              <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #E4E4E5;font-size:14px">
+                <span style="color:#55555A">{{ c.pair }}</span>
+                <span style="font-family:Sarabun,sans-serif;font-size:13px;font-weight:600;white-space:nowrap">{{ c.ratio }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:16px 0 0">Mono 50 is a caption and placeholder colour only — never body copy on white.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Typography -->
+    <section id="type" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#FFFFFF">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">04</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Typography</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">Public Sans carries English. Kanit carries Thai and Chinese — the site already swaps to it on <span style="font-family:Sarabun,sans-serif;font-size:15px;color:#19191D">:lang(th)</span> and <span style="font-family:Sarabun,sans-serif;font-size:15px;color:#19191D">:lang(zh-CN)</span>. Sarabun is the third family, currently used on small UI labels; here it is fixed to one job — captions, tokens and data — so it stops competing with Public Sans.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-bottom:44px">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;padding:28px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:16px">EN — HEADINGS, BODY, UI</div>
+          <div style="font-weight:700;font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-0.02em;margin-bottom:14px">Public Sans</div>
+          <div style="font-size:17px;color:#55555A;line-height:1.4">400 · 500 · 600 · 700</div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;padding:28px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:16px">TH · 中文 — ALL ROLES</div>
+          <div style="font-family:Kanit,sans-serif;font-weight:600;font-size:clamp(32px,4vw,48px);line-height:1.1;margin-bottom:14px">Kanit</div>
+          <div style="font-family:Kanit,sans-serif;font-size:17px;color:#55555A;line-height:1.4">400 · 500 · 600 · 700</div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;padding:28px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:16px">CAPTIONS, TOKENS, DATA</div>
+          <div style="font-family:Sarabun,sans-serif;font-weight:700;font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-0.01em;margin-bottom:14px">Sarabun</div>
+          <div style="font-family:Sarabun,sans-serif;font-size:17px;color:#55555A;line-height:1.4">400 · 600 · 700</div>
+        </div>
+      </div>
+
+      <h3 style="font-weight:700;font-size:22px;margin:0 0 20px">Type scale</h3>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;margin-bottom:44px">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px;border-bottom:1px solid #E4E4E5">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">display</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Public Sans 700 · 56/60 · −0.02em</span></div>
+          <div style="font-weight:700;font-size:clamp(28px,4.4vw,44px);line-height:1.06;letter-spacing:-0.02em;overflow-wrap:anywhere">Move it nationwide</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px;border-bottom:1px solid #E4E4E5">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">h1</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Public Sans 700 · 44/50 · −0.02em</span></div>
+          <div style="font-weight:700;font-size:clamp(24px,3.6vw,36px);line-height:1.14;letter-spacing:-0.02em;overflow-wrap:anywhere">Transportation and Distribution</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px;border-bottom:1px solid #E4E4E5">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">h2</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Public Sans 700 · 32/40 · −0.015em</span></div>
+          <div style="font-weight:700;font-size:clamp(21px,2.8vw,28px);line-height:1.2;letter-spacing:-0.015em;overflow-wrap:anywhere">Warehousing and Fulfillment</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px;border-bottom:1px solid #E4E4E5">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">h3</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Public Sans 600 · 24/32</span></div>
+          <div style="font-weight:600;font-size:clamp(19px,2.3vw,23px);line-height:1.3;overflow-wrap:anywhere">International Delivery</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px;border-bottom:1px solid #E4E4E5">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">h4</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Public Sans 600 · 20/28</span></div>
+          <div style="font-weight:600;font-size:19px;line-height:1.4;overflow-wrap:anywhere">SaaS for Logistics Operators</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px;border-bottom:1px solid #E4E4E5">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">body-lg</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Public Sans 400 · 20/32</span></div>
+          <div style="font-size:19px;line-height:1.6;overflow-wrap:anywhere">We deliver exceptional services that enable you to focus on growth.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px;border-bottom:1px solid #E4E4E5">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">body</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Public Sans 400 · 16/26</span></div>
+          <div style="font-size:16px;line-height:1.6;overflow-wrap:anywhere">Nationwide delivery across all provinces in Thailand.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px;border-bottom:1px solid #E4E4E5">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">button</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Public Sans 700 · 18/24</span></div>
+          <div style="font-weight:700;font-size:18px;line-height:1.35;overflow-wrap:anywhere">Contact Us</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px 26px">
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">caption</span><span style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">Sarabun 600 · 12/18 · 0.1em</span></div>
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;line-height:1.5;letter-spacing:0.1em;color:#8B8B8D;overflow-wrap:anywhere">UPDATED AUGUST 2026</div>
+        </div>
+      </div>
+
+      <h3 id="multilingual" style="font-weight:700;font-size:22px;margin:0 0 8px">Multilingual — EN · TH · 中文</h3>
+      <p style="font-size:15px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 20px;text-wrap:pretty">The site already switches family by language attribute. What it doesn't do consistently is adjust leading, and that's where Thai suffers.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">ENGLISH · PUBLIC SANS</div>
+          <div style="font-weight:700;font-size:24px;line-height:1.2">Nationwide delivery, all 77 provinces</div>
+          <div style="font-size:15px;line-height:1.6;color:#55555A">Body 16/26. Headline leading 1.1–1.2, tracking −0.02em from 32px up.</div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">ไทย · KANIT</div>
+          <div style="font-family:Kanit,sans-serif;font-weight:600;font-size:24px;line-height:1.5">จัดส่งทั่วประเทศ ครบทุกจังหวัด</div>
+          <div style="font-size:15px;line-height:1.6;color:#55555A">Body 16/32. Never below 1.4 leading — Kanit's tone marks and upper vowels collide. No letterspacing, and no tracking on headlines.</div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">中文 · KANIT</div>
+          <div style="font-family:Kanit,sans-serif;font-weight:600;font-size:24px;line-height:1.45">全国配送，覆盖泰国各府</div>
+          <div style="font-size:15px;line-height:1.6;color:#55555A">Body 16/30, tracking +0.02em. Kanit has no CJK glyphs — the browser falls back, so pair it with Noto Sans SC in the stack and check every heading.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Spacing -->
+    <section id="space" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#F3F3F3">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">05</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Space, elevation &amp; motion</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">An 8px base unit — the site's 24px paddings and 16px radii already sit on it. If a value isn't on the scale, it's a mistake.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:16px;padding:28px">
+          <h4 style="font-weight:700;font-size:17px;margin:0 0 20px">Spacing scale</h4>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 52px;gap:12px;align-items:center">
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">space-1</div>
+              <div style="height:14px;background:#CCEFE7;border-radius:3px;width:8px"></div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;text-align:right">8px</div>
+            </div>
+            <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 52px;gap:12px;align-items:center">
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">space-2</div>
+              <div style="height:14px;background:#CCEFE7;border-radius:3px;width:16px"></div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;text-align:right">16px</div>
+            </div>
+            <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 52px;gap:12px;align-items:center">
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">space-3</div>
+              <div style="height:14px;background:#CCEFE7;border-radius:3px;width:24px"></div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;text-align:right">24px</div>
+            </div>
+            <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 52px;gap:12px;align-items:center">
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">space-4</div>
+              <div style="height:14px;background:#CCEFE7;border-radius:3px;width:32px"></div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;text-align:right">32px</div>
+            </div>
+            <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 52px;gap:12px;align-items:center">
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">space-6</div>
+              <div style="height:14px;background:#CCEFE7;border-radius:3px;width:48px"></div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;text-align:right">48px</div>
+            </div>
+            <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 52px;gap:12px;align-items:center">
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">space-8</div>
+              <div style="height:14px;background:#CCEFE7;border-radius:3px;width:64px"></div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;text-align:right">64px</div>
+            </div>
+            <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 52px;gap:12px;align-items:center">
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">space-12</div>
+              <div style="height:14px;background:#CCEFE7;border-radius:3px;width:96px"></div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;text-align:right">96px</div>
+            </div>
+            <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 52px;gap:12px;align-items:center">
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">space-18</div>
+              <div style="height:14px;background:#CCEFE7;border-radius:3px;width:144px"></div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;text-align:right">144px</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid #E4E4E5;font-size:13px;line-height:1.6;color:#8B8B8D">Section padding 96 desktop / 48 mobile. Card padding 24. Gap between cards 20.</div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-radius:16px;padding:28px">
+          <h4 style="font-weight:700;font-size:17px;margin:0 0 20px">Grid &amp; radius</h4>
+          <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:8px;height:110px;margin-bottom:20px">
+            <div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div><div style="background:#CCEFE7;border-radius:3px"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:14px;color:#55555A">
+            <div style="display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #E4E4E5;padding-bottom:8px"><span>Desktop ≥1280</span><span style="font-family:Sarabun,sans-serif;font-size:13px;text-align:right">12 col · 24 · 64</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #E4E4E5;padding-bottom:8px"><span>Tablet 992–1279</span><span style="font-family:Sarabun,sans-serif;font-size:13px;text-align:right">8 col · 20 · 40</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px"><span>Mobile &lt;992</span><span style="font-family:Sarabun,sans-serif;font-size:13px;text-align:right">4 col · 16 · 20</span></div>
+          </div>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid #E4E4E5;font-size:13px;line-height:1.6;color:#8B8B8D">Max content width 1280px. Radius: <strong style="color:#19191D;font-weight:600">16px</strong> on buttons, inputs and cards; <strong style="color:#19191D;font-weight:600">24px</strong> on pills and toggles; 999px only on avatars. Never mix radii inside one component. Breakpoint is 992px, matching the site's mobile menu.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:20px">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:28px">
+          <h4 style="font-weight:700;font-size:17px;margin:0 0 6px">Elevation</h4>
+          <p style="font-size:14px;line-height:1.6;color:#55555A;margin:0 0 22px">The live site uses one hard shadow, <span style="font-family:Sarabun,sans-serif;font-size:13px;color:#19191D">2px 2px 2px rgba(0,0,0,0.2)</span>, on form inputs. It reads as a print artefact. Replace it with this three-step scale.</p>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:64px;height:44px;background:#FFFFFF;border:1px solid #E4E4E5;border-radius:12px;flex:none"></div><div><div style="font-size:14px;font-weight:600">Flat — resting</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">1px border, no shadow. Cards, inputs.</div></div></div>
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:64px;height:44px;background:#FFFFFF;border-radius:12px;box-shadow:0 2px 8px rgba(25,25,29,0.08);flex:none"></div><div><div style="font-size:14px;font-weight:600">Raised — hover</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">0 2px 8px rgba(25,25,29,0.08)</div></div></div>
+            <div style="display:flex;align-items:center;gap:16px"><div style="width:64px;height:44px;background:#FFFFFF;border-radius:12px;box-shadow:0 12px 32px rgba(25,25,29,0.14);flex:none"></div><div><div style="font-size:14px;font-weight:600">Floating — overlay</div><div style="font-family:Sarabun,sans-serif;font-size:12px;color:#8B8B8D">0 12px 32px rgba(25,25,29,0.14). Menus, modals, toasts.</div></div></div>
+          </div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:28px">
+          <h4 style="font-weight:700;font-size:17px;margin:0 0 6px">Motion</h4>
+          <p style="font-size:14px;line-height:1.6;color:#55555A;margin:0 0 22px">Logistics moves things on time. Our interface should feel the same: quick, no bounce, no overshoot. Hover a row to see it.</p>
+          <div style="display:flex;flex-direction:column;gap:0">
+            <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 14px;border-radius:10px;border-bottom:1px solid #E4E4E5;font-size:14px;transition:background 120ms ease-out" style-hover="background:#F3F3F3"><span style="color:#55555A">Hover, focus, colour</span><span style="font-family:Sarabun,sans-serif;font-size:13px;white-space:nowrap">120ms ease-out</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 14px;border-radius:10px;border-bottom:1px solid #E4E4E5;font-size:14px;transition:background 200ms ease-out" style-hover="background:#F3F3F3"><span style="color:#55555A">Dropdown, accordion</span><span style="font-family:Sarabun,sans-serif;font-size:13px;white-space:nowrap">200ms ease-out</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 14px;border-radius:10px;border-bottom:1px solid #E4E4E5;font-size:14px;transition:background 320ms ease-out" style-hover="background:#F3F3F3"><span style="color:#55555A">Modal, drawer, page</span><span style="font-family:Sarabun,sans-serif;font-size:13px;white-space:nowrap">320ms ease-out</span></div>
+            <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 14px;border-radius:10px;font-size:14px"><span style="color:#55555A">Scroll reveal</span><span style="font-family:Sarabun,sans-serif;font-size:13px;white-space:nowrap">fade + 16px rise, once</span></div>
+          </div>
+          <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:18px 0 0">Never animate more than opacity and transform. Honour prefers-reduced-motion — the site's scroll-reveal animations currently ignore it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Components -->
+    <section id="components" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#FFFFFF">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">06</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Components</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">Live specimens — hover and type into them. Heights and radii match the live site: 48px buttons, 60px inputs, 16px radius.</p>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 18px">Buttons</h3>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:32px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+        <button style="background:#F58800;color:#19191D;border:none;height:48px;padding:0 28px;border-radius:16px;font-family:inherit;font-size:18px;font-weight:700;cursor:pointer" style-hover="background:#D97800">Contact Us</button>
+        <button style="background:#00B085;color:#19191D;border:none;height:48px;padding:0 28px;border-radius:16px;font-family:inherit;font-size:18px;font-weight:700;cursor:pointer" style-hover="background:#00875F;color:#FFFFFF">Find out more</button>
+        <button style="background:transparent;color:#19191D;border:2px solid #19191D;height:48px;padding:0 26px;border-radius:16px;font-family:inherit;font-size:18px;font-weight:700;cursor:pointer" style-hover="border-color:#00B085;color:#00B085">Download rate card</button>
+        <button style="background:transparent;color:#00B085;border:none;padding:0 4px;font-family:inherit;font-size:18px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px" style-hover="color:#F58800">Track a shipment <span>→</span></button>
+        <button disabled="true" style="background:#E4E4E5;color:#8B8B8D;border:none;height:48px;padding:0 28px;border-radius:16px;font-family:inherit;font-size:18px;font-weight:700;cursor:not-allowed">Disabled</button>
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:0 0 44px;max-width:660px">One Orange primary per view — that is the conversion button. Green is the secondary for anything repeated, like service cards. Outline is tertiary. Label text is Mono 100, not white, for contrast. Minimum 44px height on mobile.</p>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 18px">Service card</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-bottom:44px">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column" style-hover="border-color:#00B085">
+          <div style="height:150px;background:#F3F3F3;display:flex;align-items:center;justify-content:center;padding:16px">
+            <img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Image-2.svg" alt="" style="max-height:100%;max-width:100%;object-fit:contain" />
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <h4 style="font-weight:700;font-size:19px;margin:0;letter-spacing:-0.01em">Transportation and Distribution</h4>
+            <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0;flex:1;text-wrap:pretty">Nationwide delivery across all provinces in Thailand, combining competitive pricing with exceptional service quality.</p>
+            <a href="#components" style="font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-top:6px">Find out more <span>→</span></a>
+          </div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column" style-hover="border-color:#00B085">
+          <div style="height:150px;background:#F3F3F3;display:flex;align-items:center;justify-content:center;padding:16px">
+            <img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Image-2-1.svg" alt="" style="max-height:100%;max-width:100%;object-fit:contain" />
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <h4 style="font-weight:700;font-size:19px;margin:0;letter-spacing:-0.01em">Warehousing and Fulfillment</h4>
+            <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0;flex:1;text-wrap:pretty">Streamlined processes and in-house systems guarantee 100% inventory accuracy.</p>
+            <a href="#components" style="font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-top:6px">Find out more <span>→</span></a>
+          </div>
+        </div>
+        <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column" style-hover="border-color:#00B085">
+          <div style="height:150px;background:#F3F3F3;display:flex;align-items:center;justify-content:center;padding:16px">
+            <img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Image-3-1.svg" alt="" style="max-height:100%;max-width:100%;object-fit:contain" />
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <h4 style="font-weight:700;font-size:19px;margin:0;letter-spacing:-0.01em">International Delivery</h4>
+            <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0;flex:1;text-wrap:pretty">Efficient global shipping, safe and timely to over 220 countries and territories.</p>
+            <a href="#components" style="font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-top:6px">Find out more <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:44px">
+        <div>
+          <h3 style="font-weight:700;font-size:20px;margin:0 0 18px">Form</h3>
+          <div style="border:1px solid #E4E4E5;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:18px;background:#F3F3F3">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <label for="f-name" style="font-size:14px;font-weight:600;color:#19191D">Full name</label>
+              <input id="f-name" type="text" placeholder="Somchai Prasert" style="border:2px solid transparent;border-radius:16px;height:56px;padding:0 20px;font-family:inherit;font-size:16px;color:#19191D;background:#FFFFFF" style-hover="border-color:#F58800" style-focus="outline:2px solid #F58800;border-color:transparent" />
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <label for="f-mail" style="font-size:14px;font-weight:600;color:#19191D">Work email</label>
+              <input id="f-mail" type="text" value="{{ email }}" onChange="{{ onEmail }}" placeholder="you@company.com" style="border:2px solid transparent;border-radius:16px;height:56px;padding:0 20px;font-family:inherit;font-size:16px;color:#19191D;background:#FFFFFF" style-hover="border-color:#F58800" style-focus="outline:2px solid #F58800;border-color:transparent" />
+              <sc-if value="{{ emailError }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:13px;color:#D0342C">Enter a valid email address.</span>
+              </sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <label for="f-msg" style="font-size:14px;font-weight:600;color:#19191D">What do you need moved?</label>
+              <textarea id="f-msg" rows="3" placeholder="Volumes, origin, destination" style="border:2px solid transparent;border-radius:16px;padding:16px 20px;font-family:inherit;font-size:16px;color:#19191D;background:#FFFFFF;resize:vertical" style-hover="border-color:#F58800" style-focus="outline:2px solid #F58800;border-color:transparent"></textarea>
+            </div>
+            <button style="background:#F58800;color:#19191D;border:none;height:48px;padding:0 28px;border-radius:16px;font-family:inherit;font-size:18px;font-weight:700;cursor:pointer;align-self:flex-start" style-hover="background:#D97800">Submit</button>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-weight:700;font-size:20px;margin:0 0 18px">Status, pills &amp; data</h3>
+          <div style="border:1px solid #E4E4E5;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:24px">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <span style="background:#CCEFE7;color:#00614A;font-size:14px;font-weight:600;padding:7px 16px;border-radius:24px">Delivered</span>
+              <span style="background:#FDE7CC;color:#8A4D00;font-size:14px;font-weight:600;padding:7px 16px;border-radius:24px">In transit</span>
+              <span style="background:#FADEDC;color:#8F241D;font-size:14px;font-weight:600;padding:7px 16px;border-radius:24px">Exception</span>
+              <span style="background:#F3F3F3;color:#55555A;font-size:14px;font-weight:600;padding:7px 16px;border-radius:24px">Draft</span>
+            </div>
+            <div style="display:flex;padding:4px;gap:4px;background:#F3F3F3;border:1px solid #C5C5C6;border-radius:24px;align-self:flex-start">
+              <span style="background:#FFFFFF;border:1px solid #C5C5C6;color:#00B085;font-size:14px;font-weight:600;padding:5px 16px;border-radius:24px">English</span>
+              <span style="color:#8B8B8D;font-family:Kanit,sans-serif;font-size:14px;padding:6px 14px">ภาษาไทย</span>
+              <span style="color:#8B8B8D;font-family:Kanit,sans-serif;font-size:14px;padding:6px 14px">中文</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:16px">
+              <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:34px;color:#19191D;letter-spacing:-0.02em">20+</div><div style="font-size:13px;color:#8B8B8D;line-height:1.4">Years operating</div></div>
+              <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:34px;color:#19191D;letter-spacing:-0.02em">220</div><div style="font-size:13px;color:#8B8B8D;line-height:1.4">Countries served</div></div>
+              <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:34px;color:#19191D;letter-spacing:-0.02em">100%</div><div style="font-size:13px;color:#8B8B8D;line-height:1.4">Inventory accuracy</div></div>
+            </div>
+            <div style="font-size:13px;line-height:1.6;color:#8B8B8D;border-top:1px solid #E4E4E5;padding-top:16px">Statistics are Public Sans Bold in Mono 100, never coloured green or orange, and always paired with a caption naming the source or period.</div>
+          </div>
+        </div>
+      </div>
+
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 18px">Selection controls</h3>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:32px;display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:180px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">CHECKBOX</div>
+          <label for="c1" style="display:flex;align-items:center;gap:11px;font-size:15px;cursor:pointer"><span style="width:22px;height:22px;border-radius:6px;background:#00B085;display:flex;align-items:center;justify-content:center;color:#19191D;font-size:14px;font-weight:700;flex:none">✓</span>Transportation</label>
+          <label for="c2" style="display:flex;align-items:center;gap:11px;font-size:15px;cursor:pointer"><span style="width:22px;height:22px;border-radius:6px;border:2px solid #C5C5C6;flex:none"></span>Warehousing</label>
+          <label for="c3" style="display:flex;align-items:center;gap:11px;font-size:15px;color:#8B8B8D"><span style="width:22px;height:22px;border-radius:6px;background:#E4E4E5;flex:none"></span>International</label>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:180px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">RADIO</div>
+          <label for="r1" style="display:flex;align-items:center;gap:11px;font-size:15px;cursor:pointer"><span style="width:22px;height:22px;border-radius:999px;border:2px solid #00B085;display:flex;align-items:center;justify-content:center;flex:none"><span style="width:11px;height:11px;border-radius:999px;background:#00B085"></span></span>B2B</label>
+          <label for="r2" style="display:flex;align-items:center;gap:11px;font-size:15px;cursor:pointer"><span style="width:22px;height:22px;border-radius:999px;border:2px solid #C5C5C6;flex:none"></span>B2C</label>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:180px">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">TOGGLE</div>
+          <div style="display:flex;align-items:center;gap:11px;font-size:15px"><span style="width:46px;height:26px;border-radius:24px;background:#00B085;padding:3px;display:flex;justify-content:flex-end;flex:none"><span style="width:20px;height:20px;border-radius:999px;background:#FFFFFF"></span></span>Insurance on</div>
+          <div style="display:flex;align-items:center;gap:11px;font-size:15px;color:#8B8B8D"><span style="width:46px;height:26px;border-radius:24px;background:#C5C5C6;padding:3px;display:flex;flex:none"><span style="width:20px;height:20px;border-radius:999px;background:#FFFFFF"></span></span>COD off</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:220px;flex:1">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">SELECT</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;padding:0 20px;border-radius:16px;background:#FFFFFF;border:2px solid #C5C5C6;font-size:16px" style-hover="border-color:#F58800"><span>Bangkok — Rama III</span><span style="color:#00B085">▾</span></div>
+        </div>
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:14px 0 44px;max-width:700px">Controls are 22px with a 44px tap target around them. Selected state is Sivadon 80 with a Mono 100 tick — never a white tick, which drops below 3:1 against the green.</p>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 18px">Tabs, breadcrumb &amp; pagination</h3>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:32px;display:flex;flex-direction:column;gap:30px">
+        <div style="display:flex;gap:4px;padding:4px;background:#F3F3F3;border:1px solid #C5C5C6;border-radius:24px;align-self:flex-start;flex-wrap:wrap">
+          <span style="background:#FFFFFF;border:1px solid #C5C5C6;color:#00B085;font-size:15px;font-weight:600;padding:8px 20px;border-radius:24px">Transportation</span>
+          <span style="color:#8B8B8D;font-size:15px;padding:9px 20px">Warehousing</span>
+          <span style="color:#8B8B8D;font-size:15px;padding:9px 20px">International</span>
+          <span style="color:#8B8B8D;font-size:15px;padding:9px 20px">SaaS</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#8B8B8D;flex-wrap:wrap">
+          <a href="#components">Home</a><span>/</span><a href="#components">Services</a><span>/</span><span style="color:#19191D;font-weight:600">Warehousing and Fulfillment</span>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <span style="width:40px;height:40px;border-radius:12px;border:1px solid #C5C5C6;display:flex;align-items:center;justify-content:center;color:#8B8B8D">‹</span>
+          <span style="width:40px;height:40px;border-radius:12px;background:#00B085;color:#19191D;font-weight:700;display:flex;align-items:center;justify-content:center">1</span>
+          <span style="width:40px;height:40px;border-radius:12px;border:1px solid #C5C5C6;display:flex;align-items:center;justify-content:center">2</span>
+          <span style="width:40px;height:40px;border-radius:12px;border:1px solid #C5C5C6;display:flex;align-items:center;justify-content:center">3</span>
+          <span style="width:40px;height:40px;border-radius:12px;border:1px solid #C5C5C6;display:flex;align-items:center;justify-content:center;color:#19191D">›</span>
+        </div>
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:14px 0 44px;max-width:700px">The pill tab bar and the language switcher share one construction: 24px radius, Mono 15 track, Mono 25 hairline, active chip on white with green label. The site already does this in two places — this is the single version.</p>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 18px">Feedback</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:14px">
+        <div style="background:#CCEFE7;border-radius:16px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
+          <div style="width:22px;height:22px;border-radius:999px;background:#00875F;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none">✓</div>
+          <div><div style="font-size:15px;font-weight:700;color:#00614A;margin-bottom:3px">Enquiry received</div><div style="font-size:14px;line-height:1.55;color:#19191D">Our team will reach out within 24 hours.</div></div>
+        </div>
+        <div style="background:#FDE7CC;border-radius:16px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
+          <div style="width:22px;height:22px;border-radius:999px;background:#B26A00;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none">!</div>
+          <div><div style="font-size:15px;font-weight:700;color:#8A4D00;margin-bottom:3px">Shipment delayed</div><div style="font-size:14px;line-height:1.55;color:#19191D">Customs hold at Suvarnabhumi. Revised ETA 14 Aug.</div></div>
+        </div>
+        <div style="background:#FADEDC;border-radius:16px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
+          <div style="width:22px;height:22px;border-radius:999px;background:#D0342C;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none">✕</div>
+          <div><div style="font-size:15px;font-weight:700;color:#8F241D;margin-bottom:3px">Could not submit</div><div style="font-size:14px;line-height:1.55;color:#19191D">Check the highlighted fields and try again.</div></div>
+        </div>
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:14px 0 44px;max-width:700px">Message colour is always Mono 100 on a tint. The coloured text is reserved for the one-line heading, so the body stays legible for anyone who can't separate the hues.</p>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 18px">Table</h3>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden;margin-bottom:14px">
+        <div style="display:grid;grid-template-columns:minmax(110px,1.2fr) minmax(110px,1.6fr) minmax(90px,1fr) minmax(90px,1fr);gap:16px;padding:14px 24px;background:#F3F3F3;border-bottom:1px solid #E4E4E5">
+          <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">TRACKING</div><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">ROUTE</div><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">STATUS</div><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">ETA</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(110px,1.2fr) minmax(110px,1.6fr) minmax(90px,1fr) minmax(90px,1fr);gap:16px;padding:16px 24px;border-bottom:1px solid #E4E4E5;font-size:15px;align-items:center" style-hover="background:#F3F3F3">
+          <div style="font-family:Sarabun,sans-serif;font-size:14px;overflow-wrap:anywhere">SDL-2026-0841</div>
+          <div style="color:#55555A;line-height:1.4">Bangkok → Chiang Mai</div>
+          <div><span style="font-size:13px;font-weight:600;padding:5px 12px;border-radius:24px;white-space:nowrap;background:#CCEFE7;color:#00614A">Delivered</span></div>
+          <div style="font-family:Sarabun,sans-serif;font-size:14px;color:#55555A">09 Aug</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(110px,1.2fr) minmax(110px,1.6fr) minmax(90px,1fr) minmax(90px,1fr);gap:16px;padding:16px 24px;border-bottom:1px solid #E4E4E5;font-size:15px;align-items:center" style-hover="background:#F3F3F3">
+          <div style="font-family:Sarabun,sans-serif;font-size:14px;overflow-wrap:anywhere">SDL-2026-0842</div>
+          <div style="color:#55555A;line-height:1.4">Laem Chabang → Osaka</div>
+          <div><span style="font-size:13px;font-weight:600;padding:5px 12px;border-radius:24px;white-space:nowrap;background:#FDE7CC;color:#8A4D00">In transit</span></div>
+          <div style="font-family:Sarabun,sans-serif;font-size:14px;color:#55555A">14 Aug</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(110px,1.2fr) minmax(110px,1.6fr) minmax(90px,1fr) minmax(90px,1fr);gap:16px;padding:16px 24px;border-bottom:1px solid #E4E4E5;font-size:15px;align-items:center" style-hover="background:#F3F3F3">
+          <div style="font-family:Sarabun,sans-serif;font-size:14px;overflow-wrap:anywhere">SDL-2026-0843</div>
+          <div style="color:#55555A;line-height:1.4">Bangkok → Hat Yai</div>
+          <div><span style="font-size:13px;font-weight:600;padding:5px 12px;border-radius:24px;white-space:nowrap;background:#FADEDC;color:#8F241D">Exception</span></div>
+          <div style="font-family:Sarabun,sans-serif;font-size:14px;color:#55555A">—</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(110px,1.2fr) minmax(110px,1.6fr) minmax(90px,1fr) minmax(90px,1fr);gap:16px;padding:16px 24px;border-bottom:1px solid #E4E4E5;font-size:15px;align-items:center" style-hover="background:#F3F3F3">
+          <div style="font-family:Sarabun,sans-serif;font-size:14px;overflow-wrap:anywhere">SDL-2026-0844</div>
+          <div style="color:#55555A;line-height:1.4">Rama III → Rayong</div>
+          <div><span style="font-size:13px;font-weight:600;padding:5px 12px;border-radius:24px;white-space:nowrap;background:#F3F3F3;color:#55555A">Draft</span></div>
+          <div style="font-family:Sarabun,sans-serif;font-size:14px;color:#55555A">—</div>
+        </div>
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:14px 0 44px;max-width:700px">Data columns are Sarabun so figures align. Row hover is Mono 15, never a colour. Header row is Mono 15 with Sarabun caption labels.</p>
+
+      <h3 id="icons" style="font-weight:700;font-size:20px;margin:0 0 8px">Iconography</h3>
+      <p style="font-size:15px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 20px;text-wrap:pretty">These are the icons the live site actually ships. Four of them are arrows, drawn four different ways: a downloaded circled arrow in the mega-menu, a second arrow inside the CTA button, and a separate pair for the carousel. Add two Material-style contact glyphs and the stroke weights stop agreeing entirely. The rule going forward: one family, outline only, 1.75px stroke on a 24px grid, round caps and joins, no fills. 24px in interfaces, 40px in marketing, always Mono 100 or Sivadon 80.</p>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:28px;display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/arrow-right-circle-svgrepo-com-1.svg" alt="" style="height:26px;max-width:30px;object-fit:contain" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">Arrow — menu link</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2025/07/Icon-2.svg" alt="" style="height:26px;max-width:30px;object-fit:contain" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">Arrow — inside CTA button</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Icon.svg" alt="" style="height:26px;max-width:30px;object-fit:contain" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">Hotline — header</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center;gap:6px"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Left.svg" alt="" style="height:22px" /><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Right.svg" alt="" style="height:22px" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">Carousel prev / next</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/phone.svg" alt="" style="height:26px;max-width:30px;object-fit:contain" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">Phone — contact</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/mail_open.svg" alt="" style="height:26px;max-width:30px;object-fit:contain" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">Mail — contact</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/location_outline.svg" alt="" style="height:26px;max-width:30px;object-fit:contain" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">Location — address</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2025/07/LinkedIn-3.svg" alt="" style="height:26px;max-width:30px;object-fit:contain" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">LinkedIn</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:104px">
+          <div style="width:60px;height:60px;border-radius:14px;background:#F3F3F3;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2025/07/Social-icon-2.svg" alt="" style="height:26px;max-width:30px;object-fit:contain" /></div>
+          <div style="font-size:12px;color:#55555A;text-align:center;line-height:1.4">Facebook</div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="patterns" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#FFFFFF">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">07</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Page patterns</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">Components assembled into the four blocks the site actually repeats. Build new pages from these rather than inventing a layout each time.</p>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 8px">Green-emphasis heading</h3>
+      <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0 0 18px;max-width:700px">The service pages set one phrase of a heading in Sivadon 80. It is the most distinctive thing the brand does typographically, and it currently happens by hand. The rule: one phrase per heading, two to four words, always the phrase carrying the claim — never the whole line, never a second phrase.</p>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:36px;display:flex;flex-direction:column;gap:22px;margin-bottom:44px">
+        <div style="font-weight:700;font-size:clamp(22px,2.9vw,34px);line-height:1.2;letter-spacing:-0.02em">Our facility to provide <span style="color:#00B085">top quality</span></div>
+        <div style="font-weight:700;font-size:clamp(22px,2.9vw,34px);line-height:1.2;letter-spacing:-0.02em">We <span style="color:#00B085">stand out</span> in the market</div>
+        <div style="display:flex;gap:12px;align-items:flex-start;padding-top:6px;border-top:1px solid #E4E4E5">
+          <span style="color:#D0342C;font-weight:700;font-size:15px">✕</span>
+          <div style="font-weight:700;font-size:20px;line-height:1.3;color:#8B8B8D"><span style="color:#00B085">Nationwide delivery</span> to <span style="color:#00B085">all 77 provinces</span> — two phrases, no hierarchy left</div>
+        </div>
+      </div>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 8px">Service page hero</h3>
+      <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0 0 18px;max-width:700px">Breadcrumb, H1, one sentence, one primary button, image right. No stat band, no second CTA.</p>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden;margin-bottom:44px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;padding:44px;align-items:center">
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:#8B8B8D"><span>Services</span><span>/</span><span style="color:#19191D;font-weight:600">Warehousing</span></div>
+            <div style="font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.12;letter-spacing:-0.02em">Warehousing and <span style="color:#00B085">Fulfillment</span></div>
+            <div style="font-size:16px;line-height:1.6;color:#55555A">Streamlined processes and in-house systems guarantee 100% inventory accuracy.</div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:4px">
+              <span style="background:#F58800;color:#19191D;height:48px;padding:0 26px;border-radius:16px;font-size:18px;font-weight:700;display:inline-flex;align-items:center">Contact Us</span>
+            </div>
+          </div>
+          <div style="aspect-ratio:4/3;border-radius:16px;background:#F3F3F3;display:flex;align-items:center;justify-content:center;padding:24px"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Image-2-1.svg" alt="" style="max-width:100%;max-height:100%;object-fit:contain" /></div>
+        </div>
+      </div>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 8px">Capability grid</h3>
+      <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0 0 18px;max-width:700px">The eight-up block on the service pages. Icon, H5, two lines. Keep every card to the same line count — ragged cards are the single most common defect on the live pages.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:44px">
+        <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="4">
+          <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:26px;display:flex;flex-direction:column;gap:14px" style-hover="border-color:#00B085">
+            <div style="width:48px;height:48px;border-radius:14px;background:#CCEFE7;display:flex;align-items:center;justify-content:center"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/arrow-right-circle-svgrepo-com-1.svg" alt="" style="height:24px" /></div>
+            <h4 style="font-weight:700;font-size:17px;margin:0;letter-spacing:-0.01em">{{ c.title }}</h4>
+            <p style="font-size:14px;line-height:1.6;color:#55555A;margin:0;text-wrap:pretty">{{ c.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 8px">Stat band &amp; client wall</h3>
+      <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0 0 18px;max-width:700px">Proof, stated plainly. Figures in Mono 100 on Mono 100 ground; client marks always monochrome so no logo out-shouts another.</p>
+      <div style="border-radius:16px;background:#19191D;padding:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;margin-bottom:20px">
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:700;font-size:clamp(30px,3.6vw,44px);color:#FFFFFF;letter-spacing:-0.025em;line-height:1">20+</div><div style="font-size:14px;color:#8B8B8D;line-height:1.4">Years operating</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:700;font-size:clamp(30px,3.6vw,44px);color:#FFFFFF;letter-spacing:-0.025em;line-height:1">220</div><div style="font-size:14px;color:#8B8B8D;line-height:1.4">Countries served</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:700;font-size:clamp(30px,3.6vw,44px);color:#00B085;letter-spacing:-0.025em;line-height:1">100%</div><div style="font-size:14px;color:#8B8B8D;line-height:1.4">Inventory accuracy</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:700;font-size:clamp(30px,3.6vw,44px);color:#FFFFFF;letter-spacing:-0.025em;line-height:1">77</div><div style="font-size:14px;color:#8B8B8D;line-height:1.4">Provinces covered</div></div>
+      </div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:20px;margin-bottom:14px">
+        <img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Customer-logo.svg" alt="" style="height:52px;object-fit:contain;grid-column:span 2" />
+        <img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Customer-logo-1.svg" alt="" style="height:52px;object-fit:contain;grid-column:span 2" />
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:#8B8B8D;margin:0 0 44px;max-width:700px">One figure per band may be green — the one you want remembered. The rest are white. Never colour all four.</p>
+
+      <h3 style="font-weight:700;font-size:20px;margin:0 0 8px">Header &amp; footer</h3>
+      <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0 0 18px;max-width:700px">Header is white with a single Mono 25 hairline, no shadow, 80px tall. Footer is Mono 100 with the reversed lockup.</p>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#FFFFFF;overflow:hidden">
+        <div style="background:#FFFFFF;border-bottom:1px solid #C5C5C6;padding:0 28px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+          <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon" style="height:34px" />
+          <div style="display:flex;align-items:center;gap:22px;font-size:15px;flex-wrap:wrap">
+            <span style="color:#00B085;font-weight:600">Home</span><span>Services ▾</span><span>Expand to Thailand</span>
+            <span style="background:#F58800;color:#19191D;height:44px;padding:0 22px;border-radius:16px;font-size:16px;font-weight:700;display:inline-flex;align-items:center">Contact Us</span>
+          </div>
+        </div>
+        <div style="background:#19191D;padding:36px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <img src="./assets/SivadonLogo-Full-White.svg" alt="Sivadon" style="height:30px;align-self:flex-start" />
+            <div style="font-size:13px;line-height:1.6;color:#8B8B8D">Thailand-based logistics partner, helping brands move nationwide and across Southeast Asia.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px"><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">QUICK LINKS</div><div style="font-size:14px;color:#C5C5C6">Home</div><div style="font-size:14px;color:#C5C5C6">Services</div><div style="font-size:14px;color:#C5C5C6">Expand to Thailand</div></div>
+          <div style="display:flex;flex-direction:column;gap:9px"><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">ABOUT</div><div style="font-size:14px;color:#C5C5C6">Privacy Policy</div><div style="font-size:14px;color:#C5C5C6">Terms and Conditions</div></div>
+          <div style="display:flex;flex-direction:column;gap:9px"><div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;color:#8B8B8D">CONTACT</div><div style="font-family:Sarabun,sans-serif;font-size:13px;color:#C5C5C6;line-height:1.8">096-798-8971<br />contact@sdcl.co.th</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 Photography -->
+    <section id="imagery" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#F3F3F3">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">08</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Photography</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">Real operations, real people, real Thai locations. Stock warehouse photography with anonymous interiors undercuts the one thing we sell: that we actually run this network.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:24px">
+        <figure style="margin:0"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Group-2-scaled.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block" /><figcaption style="font-size:13px;color:#8B8B8D;padding-top:9px;line-height:1.5">On the mark — real site, real people, neutral grade.</figcaption></figure>
+        <figure style="margin:0"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/Picture-scaled.jpg" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block" /><figcaption style="font-size:13px;color:#8B8B8D;padding-top:9px;line-height:1.5">On the mark — operations in progress, nothing staged.</figcaption></figure>
+        <figure style="margin:0"><div style="box-sizing:border-box;width:100%;aspect-ratio:16/10;border-radius:16px;background:#F3F3F3;display:flex;align-items:center;justify-content:center;padding:20px"><img src="https://sivadonlogistics.com/wp-content/uploads/2024/06/World-Map-desktop-1.svg" alt="" style="max-width:100%;max-height:100%;object-fit:contain" /></div><figcaption style="font-size:13px;color:#8B8B8D;padding-top:9px;line-height:1.5">Illustration, not photography — reserved for coverage and network claims.</figcaption></figure>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-top:3px solid #00B085;border-radius:16px;padding:24px">
+          <div style="font-family:Sarabun,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#00875F;margin-bottom:14px">SHOOT FOR</div>
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px;font-size:15px;line-height:1.55;color:#55555A">
+            <sc-for list="{{ imgDo }}" as="r" hint-placeholder-count="4"><li>{{ r }}</li></sc-for>
+          </ul>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #E4E4E5;border-top:3px solid #D0342C;border-radius:16px;padding:24px">
+          <div style="font-family:Sarabun,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#D0342C;margin-bottom:14px">AVOID</div>
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px;font-size:15px;line-height:1.55;color:#55555A">
+            <sc-for list="{{ imgDont }}" as="r" hint-placeholder-count="4"><li>{{ r }}</li></sc-for>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 Voice -->
+    <section id="voice" style="padding:80px 64px;border-bottom:1px solid #E4E4E5;background:#FFFFFF">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">09</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Voice &amp; tone</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">We write the way a good operations manager talks: specific, calm, and willing to name a number. Our customers are choosing who to trust with their inventory, and precision reads as competence.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-bottom:36px">
+        <sc-for list="{{ voice }}" as="v" hint-placeholder-count="3">
+          <div style="border:1px solid #E4E4E5;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px">
+            <h4 style="font-weight:700;font-size:18px;margin:0">{{ v.title }}</h4>
+            <p style="font-size:15px;line-height:1.6;color:#55555A;margin:0;text-wrap:pretty">{{ v.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 1fr;background:#F3F3F3;border-bottom:1px solid #E4E4E5">
+          <div style="padding:14px 24px;font-family:Sarabun,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#00875F">WE WRITE</div>
+          <div style="padding:14px 24px;font-family:Sarabun,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#D0342C;border-left:1px solid #E4E4E5">NOT</div>
+        </div>
+        <sc-for list="{{ copyPairs }}" as="c" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E4E4E5">
+            <div style="padding:20px 24px;font-size:15px;line-height:1.55">{{ c.good }}</div>
+            <div style="padding:20px 24px;font-size:15px;line-height:1.55;color:#8B8B8D;border-left:1px solid #E4E4E5">{{ c.bad }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- 08 Applications -->
+    <section id="apps" style="padding:80px 64px 96px;background:#F3F3F3">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:12px">
+        <span style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;color:#00B085;letter-spacing:0.14em">10</span>
+        <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,38px);letter-spacing:-0.015em;margin:0">Applications</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;color:#55555A;max-width:660px;margin:0 0 44px;text-wrap:pretty">The same system on the three surfaces that get made most often.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:20px">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;background:#FFFFFF">
+          <div style="background:#19191D;min-height:280px;padding:40px;display:flex;flex-direction:column;justify-content:space-between;gap:36px;position:relative;overflow:hidden">
+            <div style="position:absolute;right:-70px;bottom:-90px;width:240px;height:240px;background:#00B085;border-radius:70px;opacity:0.18"></div>
+            <div style="display:flex;align-items:center;gap:10px;position:relative">
+              <img src="./assets/SivadonLogo-Full-White.svg" alt="Sivadon" style="height:26px" />
+            </div>
+            <div style="position:relative;display:flex;flex-direction:column;gap:14px">
+              <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:12px;letter-spacing:0.16em;color:#00B085">CAPABILITIES 2026</div>
+              <div style="font-weight:700;font-size:clamp(22px,3.2vw,38px);line-height:1.1;color:#FFFFFF;letter-spacing:-0.02em;max-width:460px">Your window to access Thailand</div>
+            </div>
+          </div>
+          <div style="padding:18px 22px;font-size:13px;color:#55555A;border-top:1px solid #E4E4E5">Deck title slide, 16:9. Mono 100 fill, a soft green shape bleeding off one corner, Sarabun kicker above the headline. Body slides invert: white fill, Mono 100 type, one green accent.</div>
+        </div>
+
+        <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;background:#FFFFFF">
+          <div style="background:#FFFFFF;min-height:280px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;border-bottom:1px solid #E4E4E5">
+            <div style="display:flex;align-items:center;gap:10px">
+              <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon" style="height:26px" />
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <div style="font-weight:700;font-size:16px;color:#19191D">Vorakij Punyashthiti</div>
+              <div style="font-size:13px;color:#8B8B8D;margin-bottom:8px">CEO Thailand</div>
+              <div style="font-family:Sarabun,sans-serif;font-size:12px;color:#55555A;line-height:1.8">096-798-8971<br />contact@sdcl.co.th</div>
+            </div>
+          </div>
+          <div style="padding:18px 22px;font-size:13px;color:#55555A">Business card, 90×55mm. Mark top left, contact details in Sarabun. Reverse is solid Mono 100 with the mark centred.</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
+        <sc-for list="{{ socials }}" as="s" hint-placeholder-count="3">
+          <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;background:#FFFFFF">
+            <div style="min-height:240px;background:#FFFFFF;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;border-bottom:1px solid #E4E4E5">
+              <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:11px;letter-spacing:0.16em;color:#00B085">{{ s.kicker }}</div>
+              <div style="font-weight:700;font-size:clamp(17px,1.7vw,26px);line-height:1.16;color:#19191D;letter-spacing:-0.015em;text-wrap:balance">{{ s.line }}</div>
+              <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon" style="height:22px;align-self:flex-start" />
+            </div>
+            <div style="padding:16px 20px;font-size:13px;color:#55555A;line-height:1.5">{{ s.note }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { email: "" };
+
+  renderVals() {
+    const email = this.state.email;
+    return {
+      email,
+      emailError: email.length > 0 && !/^\S+@\S+\.\S+$/.test(email),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+
+      nav: [
+        { num: "01", label: "Brand foundation", href: "#foundation" },
+        { num: "02", label: "Logo set", href: "#logos" },
+        { num: "03", label: "Colour", href: "#colour" },
+        { num: "04", label: "Typography", href: "#type" },
+        { num: "05", label: "Space, elevation, motion", href: "#space" },
+        { num: "06", label: "Components", href: "#components" },
+        { num: "07", label: "Page patterns", href: "#patterns" },
+        { num: "08", label: "Photography", href: "#imagery" },
+        { num: "09", label: "Voice & tone", href: "#voice" },
+        { num: "10", label: "Applications", href: "#apps" }
+      ],
+
+      pillars: [
+        { kicker: "WHO WE ARE", title: "An operator, not a broker", body: "Founded in 2022 by logistics and eCommerce veterans, backed by 20+ years of nationwide operating history. We run the network we sell." },
+        { kicker: "WHAT WE PROMISE", title: "Your window to Thailand", body: "Local businesses grow nationwide; global brands scale across Southeast Asia without building a country team." },
+        { kicker: "HOW WE SOUND", title: "Precise and unhurried", body: "Specific numbers, plain sentences, no hype. Confidence comes from detail, not adjectives." }
+      ],
+
+      logoDo: [
+        "Use the supplied SVG or EPS without modification.",
+        "Keep clear space equal to the mark's height on all four sides.",
+        "Minimum sizes: 24px height on screen, 12mm in print.",
+        "Reverse to white on Mono 100, or a photo at 40%+ overlay."
+      ],
+      logoDont: [
+        "Recolour the mark, outline it, or add a shadow or gradient.",
+        "Stretch, rotate, or rebuild the lockup from live type.",
+        "Place it on Sivadon Green or Orange — the mark needs a neutral ground.",
+        "Set the wordmark in anything other than Public Sans Bold."
+      ],
+
+      contrast: [
+        { pair: "Mono 100 on Mono 0", ratio: "16.9 : 1 · AAA" },
+        { pair: "Mono 0 on Mono 100", ratio: "16.9 : 1 · AAA" },
+        { pair: "Mono 75 on Mono 0", ratio: "7.4 : 1 · AAA" },
+        { pair: "Mono 100 on Sivadon 80", ratio: "6.3 : 1 · AA" },
+        { pair: "Mono 100 on Orange 80", ratio: "7.1 : 1 · AAA" },
+        { pair: "Sivadon 80 on Mono 0", ratio: "2.8 : 1 · 24px+ only" },
+        { pair: "Mono 50 on Mono 0", ratio: "3.4 : 1 · captions only" }
+      ],
+
+
+
+      misuse: [],
+
+      files: [
+        { name: "sivadon-logo-horizontal", format: "SVG, EPS, PNG@2x", colour: "Full colour", use: "Default. Web, deck, document, signature." },
+        { name: "sivadon-logo-horizontal-rev", format: "SVG, EPS, PNG@2x", colour: "Reversed", use: "Mono 100 grounds and photography." },
+        { name: "sivadon-logo-stacked", format: "SVG, EPS, PNG@2x", colour: "Full colour + reversed", use: "Square and narrow placements." },
+        { name: "sivadon-logo-mono", format: "SVG, EPS", colour: "Mono 100 / white", use: "One-colour print, engraving, embroidery." },
+        { name: "sivadon-mark", format: "SVG, PNG@2x", colour: "Full colour + reversed", use: "Below 24px wordmark height." },
+        { name: "sivadon-icon", format: "SVG, PNG 512/192/32", colour: "Mark on Mono 100", use: "Favicon, app icon, social avatar." }
+      ],
+
+
+      capabilities: [
+        { title: "Comprehensive Warehouse Management", body: "Receiving, put-away, picking and cycle counting on one in-house WMS." },
+        { title: "Strategic Locations", body: "Sites positioned for same-day reach into Bangkok and the Eastern Seaboard." },
+        { title: "Enhanced Security", body: "24-hour monitoring, controlled access and all-risks insurance coverage." },
+        { title: "OMS Client Portal", body: "Live stock, order status and exception alerts, visible to your team." }
+      ],
+
+      icons: ["Truck / transport", "Warehouse", "Globe / international", "Package", "Route pin", "Dashboard", "Clock / SLA", "Support"],
+
+      imgDo: [
+        "Sivadon vehicles, sites and staff, shot on location.",
+        "Natural light, neutral grade, no heavy filters.",
+        "People mid-task with hands visible — work in progress.",
+        "Wide establishing shots paired with one tight detail crop."
+      ],
+      imgDont: [
+        "Generic stock warehouses with no identifying detail.",
+        "Boardroom handshakes, arrows, or globe composites.",
+        "Green or orange duotone overlays on photography.",
+        "Competitor liveries or unreleased client branding in frame."
+      ],
+
+      voice: [
+        { title: "Specific over superlative", body: "\"220 countries\" and \"100% inventory accuracy\" do more work than \"world-class\". If a claim has a number, use the number." },
+        { title: "Short sentences, full words", body: "Plain English that survives translation into Thai and Chinese. Avoid idiom, contractions in formal collateral, and internal jargon." },
+        { title: "Customer's outcome first", body: "Lead with what the customer gets, then how we do it. \"Focus on growth\" before \"in-house systems\"." }
+      ],
+
+      copyPairs: [
+        { good: "We deliver to all 77 provinces, typically within 48 hours.", bad: "We offer unparalleled, best-in-class delivery coverage." },
+        { good: "Our team will reach out within 24 hours.", bad: "We'll be in touch as soon as humanly possible!" },
+        { good: "100% inventory accuracy, verified at every cycle count.", bad: "Accuracy you can trust, every single time." },
+        { good: "Founded in 2022 by logistics and eCommerce veterans.", bad: "A revolutionary force disrupting Southeast Asian logistics." }
+      ],
+
+      socials: [
+        { kicker: "MILESTONE", line: "220 countries, one point of contact", note: "1:1 post. Statistic-led, Mono 100 type on white, green kicker." },
+        { kicker: "PEOPLE", line: "Meet the team running the network", note: "Portrait fills the frame; logo bottom-left over a dark scrim." },
+        { kicker: "SERVICE", line: "Warehousing built on our own software", note: "Photo top two-thirds, white caption band beneath." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

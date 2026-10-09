@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Kanit:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  doc-page:not(:defined) { visibility: hidden; }
+  a { color: #00B085; text-decoration: none; }
+  a:hover { color: #00B085; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+
+<doc-page margin="0.9in">
+
+  <div slot="header" style="display:flex;justify-content:space-between;align-items:baseline;font-family:Sarabun,sans-serif;font-size:9px;letter-spacing:0.14em;color:#8B8B8D;padding-bottom:8px;border-bottom:1px solid #E4E4E5">
+    <span>SIVADON LOGISTICS</span>
+    <span>BRAND GUIDELINES · V1.0</span>
+  </div>
+
+  <div slot="footer" style="display:flex;justify-content:space-between;align-items:baseline;font-family:Sarabun,sans-serif;font-size:9px;letter-spacing:0.1em;color:#8B8B8D;padding-top:8px;border-top:1px solid #E4E4E5">
+    <span>contact@sdcl.co.th</span>
+    <span>AUGUST 2026</span>
+  </div>
+
+  <div style="font-family:'Public Sans',sans-serif;color:#19191D;font-size:11pt;line-height:1.6">
+
+    <!-- Cover -->
+    <div style="background:#19191D;color:#FFFFFF;padding:56px 48px;border-radius:10px;display:flex;flex-direction:column;gap:26px;margin-bottom:44px;break-inside:avoid">
+      <img src="./assets/SivadonLogo-Full-White.svg" alt="Sivadon" style="height:34px;align-self:flex-start" />
+      <h1 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:40pt;line-height:1.04;letter-spacing:-0.02em;margin:0">Brand Guidelines</h1>
+      <p style="font-size:12pt;line-height:1.6;color:#C5C5C6;margin:0;max-width:5in">The rules for how Sivadon looks, sounds and behaves. Written for our marketing team, our agencies and anyone building on our behalf.</p>
+      <div style="font-family:Sarabun,sans-serif;font-size:9pt;letter-spacing:0.14em;color:#00B085;padding-top:12px">VERSION 1.0 · AUGUST 2026</div>
+    </div>
+
+    <!-- Contents -->
+    <div style="break-inside:avoid;margin-bottom:36px">
+      <h2 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:16pt;margin:0 0 16px;letter-spacing:-0.01em">Contents</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 32px">
+        <sc-for list="{{ toc }}" as="t" hint-placeholder-count="8">
+          <div style="display:flex;gap:12px;font-size:10.5pt;padding:5px 0;border-bottom:1px solid #E4E4E5">
+            <span style="font-family:Sarabun,sans-serif;font-size:9pt;color:#00B085">{{ t.num }}</span>
+            <span>{{ t.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- 01 Foundation -->
+    <h2 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:20pt;letter-spacing:-0.015em;margin:0 0 6px;break-before:page;break-after:avoid">01 · Brand foundation</h2>
+    <p style="color:#55555A;margin:0 0 22px;max-width:5.4in">Founded in 2022 by logistics and eCommerce veterans and backed by more than twenty years of nationwide operating history, Sivadon helps local businesses grow across Thailand and global brands scale across Southeast Asia. Everything in this document traces back to three ideas.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+      <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;padding:18px;break-inside:avoid">
+          <div style="font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:8px">{{ p.kicker }}</div>
+          <h3 style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:12pt;margin:0 0 8px">{{ p.title }}</h3>
+          <p style="font-size:9.5pt;line-height:1.55;color:#55555A;margin:0">{{ p.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <h3 style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:13pt;margin:0 0 14px;break-after:avoid">Logo</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#F3F3F3;padding:40px;display:flex;align-items:center;justify-content:center">
+        <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon logo" style="width:180px;max-width:100%;padding:22px;outline:1px dashed #C5C5C6;outline-offset:20px" />
+      </div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;background:#19191D;padding:40px;display:flex;align-items:center;justify-content:center">
+        <img src="./assets/SivadonLogo-Full-White.svg" alt="Sivadon logo reversed" style="width:165px;max-width:100%" />
+      </div>
+    </div>
+    <p style="font-size:9.5pt;line-height:1.55;color:#8B8B8D;margin:0 0 20px;font-family:Sarabun,sans-serif">The live files, straight from the site. Master: 2024/08/logo-sivadon.svg. Reversed: 2024/06/Logo.svg. A wide variant, Logo-1.svg, appears in the contact band. The square mark is only a JPG (cropped-Group), so it has a hard edge at small sizes. Still to produce: a vector mark, EPS for print, stacked and single-colour lockups.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-top:3px solid #00875F;border-radius:16px;padding:18px">
+        <div style="font-size:8.5pt;font-weight:600;letter-spacing:0.12em;color:#00875F;margin-bottom:10px">DO</div>
+        <ul style="margin:0;padding-left:16px;font-size:9.5pt;line-height:1.5;color:#55555A;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ logoDo }}" as="r" hint-placeholder-count="4"><li>{{ r }}</li></sc-for>
+        </ul>
+      </div>
+      <div style="border:1px solid #E4E4E5;border-top:3px solid #D0342C;border-radius:16px;padding:18px">
+        <div style="font-size:8.5pt;font-weight:600;letter-spacing:0.12em;color:#D0342C;margin-bottom:10px">DON'T</div>
+        <ul style="margin:0;padding-left:16px;font-size:9.5pt;line-height:1.5;color:#55555A;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ logoDont }}" as="r" hint-placeholder-count="4"><li>{{ r }}</li></sc-for>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 02 Colour -->
+    <h2 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:20pt;letter-spacing:-0.015em;margin:0 0 6px;break-before:page;break-after:avoid">02 · Colour</h2>
+    <p style="color:#55555A;margin:0 0 22px;max-width:5.4in">Sivadon Green is the brand. Orange is the single conversion colour — the Contact Us and Submit buttons, nothing else. Everything in between is the Mono ramp. Token names match what is already in the website CSS.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:10px">
+      <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;break-inside:avoid"><div style="height:70px;background:#00B085"></div><div style="padding:10px 12px"><div style="font-size:9.5pt;font-weight:700">Sivadon 80 · Primary</div><div style="font-family:Sarabun,sans-serif;font-size:8.5pt;color:#8B8B8D">#00B085 · --Sivadon-80</div><div style="font-family:Sarabun,sans-serif;font-size:8pt;color:#8B8B8D;margin-top:3px">Links, active states, mark</div></div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;break-inside:avoid"><div style="height:70px;background:#F58800"></div><div style="padding:10px 12px"><div style="font-size:9.5pt;font-weight:700">Orange 80 · Action</div><div style="font-family:Sarabun,sans-serif;font-size:8.5pt;color:#8B8B8D">#F58800 · --Orange-80</div><div style="font-family:Sarabun,sans-serif;font-size:8pt;color:#8B8B8D;margin-top:3px">One CTA per view; input focus</div></div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;break-inside:avoid"><div style="height:70px;background:#19191D"></div><div style="padding:10px 12px"><div style="font-size:9.5pt;font-weight:700">Mono 100</div><div style="font-family:Sarabun,sans-serif;font-size:8.5pt;color:#8B8B8D">#19191D · --Mono-100</div><div style="font-family:Sarabun,sans-serif;font-size:8pt;color:#8B8B8D;margin-top:3px">All body copy, headings, dark fills</div></div></div>
+    </div>
+    <p style="font-size:9pt;color:#8B8B8D;margin:0 0 22px;font-family:Sarabun,sans-serif">Pantone and CMYK equivalents are not yet specified. Have the printer match to #00B085 and #F58800 from a proof before any print run.</p>
+
+    <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:8pt;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:10px">MONO RAMP</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:10px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#19191D"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Mono 100<br />#19191D</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#55555A"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Mono 75<br />#55555A</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#8B8B8D"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Mono 50<br />#8B8B8D</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#C5C5C6"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Mono 25<br />#C5C5C6</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#F3F3F3"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Mono 15<br />#F3F3F3</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#FFFFFF;border-bottom:1px solid #E4E4E5"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Mono 0<br />#FFFFFF</div></div>
+    </div>
+    <p style="font-size:9pt;color:#8B8B8D;margin:0 0 22px;font-family:Sarabun,sans-serif">Mono 75 and Mono 15 are additions to the live set. Mono 75 gives secondary copy a step that passes AA on white — Mono 50 does not at body size.</p>
+
+    <div style="font-family:Sarabun,sans-serif;font-weight:600;font-size:8pt;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:10px">TINTS — NEW, FOR BACKGROUNDS AND STATES</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:26px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#00875F"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Sivadon 100<br />#00875F</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#00C795"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Sivadon 60<br />#00C795</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#CCEFE7"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Sivadon 15<br />#CCEFE7</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#D97800"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Orange 100<br />#D97800</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#FDE7CC"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Orange 15<br />#FDE7CC</div></div>
+      <div style="border:1px solid #E4E4E5;border-radius:12px;overflow:hidden"><div style="height:40px;background:#E4E4E5"></div><div style="padding:6px;font-family:Sarabun,sans-serif;font-size:7pt;color:#8B8B8D;text-align:center">Mono 20<br />#E4E4E5</div></div>
+    </div>
+
+    <div style="border:1px solid #E4E4E5;border-radius:16px;padding:18px;break-inside:avoid">
+      <h3 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:12pt;margin:0 0 12px">Proportion &amp; contrast</h3>
+      <div style="display:flex;height:26px;border-radius:8px;overflow:hidden;margin-bottom:12px">
+        <div style="flex:65;background:#F3F3F3"></div>
+        <div style="flex:20;background:#19191D"></div>
+        <div style="flex:10;background:#00B085"></div>
+        <div style="flex:5;background:#F58800"></div>
+      </div>
+      <p style="font-size:9.5pt;line-height:1.55;color:#55555A;margin:0 0 10px">Roughly 65% neutral, 20% Mono 100, 10% green, 5% orange.</p>
+      <p style="font-size:9.5pt;line-height:1.55;color:#55555A;margin:0 0 10px"><strong>One correction to make.</strong> White text on Sivadon Green reads 2.8:1 and on Orange 2.5:1 — both fail AA at any size, and the live site does this on its green and Submit buttons. Set button labels in Mono 100 instead: 6.3:1 on green, 7.1:1 on orange. Green as text on white is 2.8:1, so reserve it for 24px and above.</p>
+      <p style="font-size:9.5pt;line-height:1.55;color:#55555A;margin:0">Product status colours — Success #00875F, Warning #B26A00, Error #D0342C — appear in interfaces only, never in marketing.</p>
+    </div>
+
+    <!-- 03 Typography -->
+    <h2 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:20pt;letter-spacing:-0.015em;margin:0 0 6px;break-before:page;break-after:avoid">03 · Typography</h2>
+    <p style="color:#55555A;margin:0 0 22px;max-width:5.4in">Public Sans carries English. Kanit carries Thai and Chinese — the site already swaps to it on :lang(th) and :lang(zh-CN). Sarabun is the third family; here it is fixed to one job, captions and data, so it stops competing with Public Sans.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:20px">
+        <div style="font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:10px">EN — HEADINGS, BODY, UI</div>
+        <div style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:32pt;line-height:1;letter-spacing:-0.02em">Public Sans</div>
+        <div style="font-family:'Public Sans',sans-serif;font-size:10pt;color:#55555A;margin-top:8px">Regular 400 · Medium 500 · SemiBold 600 · Bold 700</div>
+      </div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:20px">
+        <div style="font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.14em;color:#8B8B8D;margin-bottom:10px">TH · 中文 — ALL ROLES</div>
+        <div style="font-family:Kanit,sans-serif;font-weight:600;font-size:26pt;line-height:1.1">Kanit</div>
+        <div style="font-family:Kanit,sans-serif;font-size:10pt;color:#55555A;margin-top:8px">Regular 400 · Medium 500 · SemiBold 600 · Bold 700</div>
+      </div>
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;margin-bottom:26px;font-size:10pt">
+      <thead>
+        <tr style="border-bottom:1px solid #C5C5C6">
+          <th style="text-align:left;padding:8px 0;font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.12em;color:#8B8B8D;font-weight:400">TOKEN</th>
+          <th style="text-align:left;padding:8px 0;font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.12em;color:#8B8B8D;font-weight:400">FAMILY &amp; WEIGHT</th>
+          <th style="text-align:right;padding:8px 0;font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.12em;color:#8B8B8D;font-weight:400">SIZE / LEADING</th>
+          <th style="text-align:right;padding:8px 0;font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.12em;color:#8B8B8D;font-weight:400">TRACKING</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ scale }}" as="s" hint-placeholder-count="10">
+          <tr style="border-bottom:1px solid #E4E4E5">
+            <td style="padding:9px 0;font-family:Sarabun,sans-serif;font-size:9pt">{{ s.token }}</td>
+            <td style="padding:9px 0;color:#55555A">{{ s.family }}</td>
+            <td style="padding:9px 0;text-align:right;font-family:Sarabun,sans-serif;font-size:9pt">{{ s.size }}</td>
+            <td style="padding:9px 0;text-align:right;font-family:Sarabun,sans-serif;font-size:9pt;color:#8B8B8D">{{ s.track }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:13pt;margin:0 0 6px;break-after:avoid">Multilingual — EN · TH · 中文</h3>
+    <p style="font-size:10pt;color:#55555A;margin:0 0 14px;max-width:5.4in">We publish in three languages, so the stack has to hold up in all three. Thai needs more leading than Latin; Simplified Chinese needs looser tracking and a heavier weight to match optical colour.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:16px">
+        <div style="font-family:Sarabun,sans-serif;font-size:7.5pt;letter-spacing:0.12em;color:#8B8B8D;margin-bottom:10px">ENGLISH · PUBLIC SANS</div>
+        <div style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:13pt;line-height:1.15;margin-bottom:8px">Nationwide delivery, all 77 provinces</div>
+        <div style="font-size:9pt;line-height:1.5;color:#55555A">Body 16/26. Headline leading 1.1–1.2, tracking −0.02em from 32px up.</div>
+      </div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:16px">
+        <div style="font-family:Sarabun,sans-serif;font-size:7.5pt;letter-spacing:0.12em;color:#8B8B8D;margin-bottom:10px">ไทย · KANIT</div>
+        <div style="font-family:Kanit,sans-serif;font-weight:600;font-size:13pt;line-height:1.5;margin-bottom:8px">จัดส่งทั่วประเทศ ครบทุกจังหวัด</div>
+        <div style="font-size:9pt;line-height:1.5;color:#55555A">Body 16/32. Never below 1.4 leading — Kanit's tone marks and upper vowels collide. No letterspacing on Thai, ever.</div>
+      </div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:16px">
+        <div style="font-family:Sarabun,sans-serif;font-size:7.5pt;letter-spacing:0.12em;color:#8B8B8D;margin-bottom:10px">中文 · KANIT</div>
+        <div style="font-family:Kanit,sans-serif;font-weight:700;font-size:13pt;line-height:1.4;margin-bottom:8px">全国配送，覆盖泰国各府</div>
+        <div style="font-size:9pt;line-height:1.5;color:#55555A">Body 16/30, tracking +0.02em. Kanit has no CJK glyphs, so pair it with Noto Sans SC in the stack and check every heading.</div>
+      </div>
+    </div>
+
+    <!-- 04 Layout -->
+    <h2 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:20pt;letter-spacing:-0.015em;margin:0 0 6px;break-before:page;break-after:avoid">04 · Spacing, grid &amp; components</h2>
+    <p style="color:#55555A;margin:0 0 22px;max-width:5.4in">An 8px base unit. Every margin, padding, gap and component height is a multiple of it. If a value isn't on the scale, it's a mistake.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:18px">
+        <h3 style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:12pt;margin:0 0 12px">Scale</h3>
+        <div style="font-family:Sarabun,sans-serif;font-size:9pt;line-height:2;color:#55555A">8 · 16 · 24 · 32 · 48 · 64 · 96 · 144</div>
+        <p style="font-size:9.5pt;line-height:1.55;color:#55555A;margin:10px 0 0">Section padding 96 desktop / 48 mobile. Card padding 24. Gap between cards 20.</p>
+      </div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;padding:18px">
+        <h3 style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:12pt;margin:0 0 12px">Grid</h3>
+        <div style="font-size:9.5pt;line-height:1.7;color:#55555A">Desktop ≥1280 — 12 col, 24 gutter, 64 margin<br />Tablet 992–1279 — 8 col, 20 gutter, 40 margin<br />Mobile &lt;992 — 4 col, 16 gutter, 20 margin<br />Max content width 1280px.</div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E4E4E5;border-radius:16px;padding:18px;margin-bottom:26px;break-inside:avoid">
+      <h3 style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:12pt;margin:0 0 14px">Buttons</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
+        <span style="background:#F58800;color:#19191D;padding:10px 20px;border-radius:16px;font-size:10pt;font-weight:700">Contact us</span>
+        <span style="background:#00B085;color:#19191D;padding:10px 20px;border-radius:16px;font-size:10pt;font-weight:700">Find out more</span>
+        <span style="border:1px solid #C5C5C6;color:#19191D;padding:10px 20px;border-radius:16px;font-size:10pt;font-weight:700">Download rate card</span>
+        <span style="background:#E4E4E5;color:#8B8B8D;padding:10px 20px;border-radius:16px;font-size:10pt;font-weight:700">Disabled</span>
+      </div>
+      <p style="font-size:9.5pt;line-height:1.55;color:#55555A;margin:0">One Orange primary per view — that is the conversion button. Green is the secondary for anything repeated, outline is tertiary. Labels set in Mono 100, not white. Height 48px, 44px minimum on mobile. Radius 16px on buttons, inputs and cards; 24px on pills — never mixed within one component.</p>
+    </div>
+
+    <div style="border:1px solid #E4E4E5;border-radius:16px;padding:18px;break-inside:avoid">
+      <h3 style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:12pt;margin:0 0 10px">Iconography</h3>
+      <p style="font-size:9.5pt;line-height:1.55;color:#55555A;margin:0">One family, outline only: 1.75px stroke on a 24px grid, round caps and joins, no fills, no two-tone. 24px in interfaces, 40px in marketing, always Mono 100 or Sivadon 80. Orange is reserved for the single call to action, never for icons. The site's mixed set of sourced SVGs should be replaced with a single licensed family.</p>
+    </div>
+
+    <!-- 05 Imagery + voice -->
+    <h2 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:20pt;letter-spacing:-0.015em;margin:0 0 6px;break-before:page;break-after:avoid">05 · Photography</h2>
+    <p style="color:#55555A;margin:0 0 20px;max-width:5.4in">Real operations, real people, real Thai locations. Stock warehouse photography with anonymous interiors undercuts the one thing we sell: that we actually run this network.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:34px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-top:3px solid #00875F;border-radius:16px;padding:18px">
+        <div style="font-size:8.5pt;font-weight:600;letter-spacing:0.12em;color:#00875F;margin-bottom:10px">SHOOT FOR</div>
+        <ul style="margin:0;padding-left:16px;font-size:9.5pt;line-height:1.5;color:#55555A;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ imgDo }}" as="r" hint-placeholder-count="4"><li>{{ r }}</li></sc-for>
+        </ul>
+      </div>
+      <div style="border:1px solid #E4E4E5;border-top:3px solid #D0342C;border-radius:16px;padding:18px">
+        <div style="font-size:8.5pt;font-weight:600;letter-spacing:0.12em;color:#D0342C;margin-bottom:10px">AVOID</div>
+        <ul style="margin:0;padding-left:16px;font-size:9.5pt;line-height:1.5;color:#55555A;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ imgDont }}" as="r" hint-placeholder-count="4"><li>{{ r }}</li></sc-for>
+        </ul>
+      </div>
+    </div>
+
+    <h2 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:20pt;letter-spacing:-0.015em;margin:0 0 6px;break-after:avoid">06 · Voice &amp; tone</h2>
+    <p style="color:#55555A;margin:0 0 20px;max-width:5.4in">We write the way a good operations manager talks: specific, calm, and willing to name a number. Our customers are choosing who to trust with their inventory, and precision reads as competence.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px">
+      <sc-for list="{{ voice }}" as="v" hint-placeholder-count="3">
+        <div style="border:1px solid #E4E4E5;border-radius:16px;padding:16px;break-inside:avoid">
+          <h3 style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:11pt;margin:0 0 7px">{{ v.title }}</h3>
+          <p style="font-size:9pt;line-height:1.5;color:#55555A;margin:0">{{ v.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;font-size:10pt;margin-bottom:8px">
+      <thead>
+        <tr style="border-bottom:1px solid #C5C5C6">
+          <th style="text-align:left;padding:8px 12px 8px 0;font-size:8.5pt;letter-spacing:0.12em;color:#00875F;width:50%">WE WRITE</th>
+          <th style="text-align:left;padding:8px 0 8px 12px;font-size:8.5pt;letter-spacing:0.12em;color:#D0342C">NOT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ copyPairs }}" as="c" hint-placeholder-count="4">
+          <tr style="border-bottom:1px solid #E4E4E5">
+            <td style="padding:11px 12px 11px 0;line-height:1.5;vertical-align:top">{{ c.good }}</td>
+            <td style="padding:11px 0 11px 12px;line-height:1.5;color:#8B8B8D;vertical-align:top">{{ c.bad }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+
+    <!-- 07 Applications -->
+    <h2 style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:20pt;letter-spacing:-0.015em;margin:0 0 6px;break-before:page;break-after:avoid">07 · Applications</h2>
+    <p style="color:#55555A;margin:0 0 20px;max-width:5.4in">The same system on the surfaces that get made most often.</p>
+
+    <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden;margin-bottom:16px;break-inside:avoid">
+      <div style="background:#19191D;padding:36px;display:flex;flex-direction:column;gap:44px;position:relative;overflow:hidden">
+        <div style="position:absolute;right:-30px;bottom:-50px;width:200px;height:200px;background:#00B085;border-radius:6px;opacity:0.5"></div>
+        <img src="./assets/SivadonLogo-Full-White.svg" alt="Sivadon" style="height:22px;position:relative;align-self:flex-start" />
+        <div style="position:relative">
+          <div style="font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.16em;color:#00B085;margin-bottom:10px">CAPABILITIES 2026</div>
+          <div style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:24pt;line-height:1.08;color:#FFFFFF;letter-spacing:-0.02em;max-width:4in">Your window to access Thailand</div>
+        </div>
+      </div>
+      <div style="padding:14px 18px;font-size:9.5pt;color:#55555A;border-top:1px solid #E4E4E5">Deck title slide, 16:9. Mono 100 fill, a soft green shape bleeding off one corner, Sarabun kicker above the headline. Body slides invert: white fill, Mono 100 type, one green accent maximum.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;break-inside:avoid">
+      <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden">
+        <div style="padding:24px;display:flex;flex-direction:column;gap:36px">
+          <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon" style="height:22px;align-self:flex-start" />
+          <div>
+            <div style="font-family:'Public Sans',sans-serif;font-weight:600;font-size:11pt">Vorakij Punyashthiti</div>
+            <div style="font-size:8.5pt;color:#8B8B8D;margin-bottom:7px">CEO Thailand</div>
+            <div style="font-family:Sarabun,sans-serif;font-size:8pt;color:#55555A;line-height:1.7">096-798-8971<br />contact@sdcl.co.th</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;font-size:9.5pt;color:#55555A;border-top:1px solid #E4E4E5">Business card, 90×55mm. Mark top left, contact details in Sarabun. Reverse is solid Mono 100 with the mark centred.</div>
+      </div>
+      <div style="border:1px solid #E4E4E5;border-radius:16px;overflow:hidden">
+        <div style="padding:24px;display:flex;flex-direction:column;gap:22px">
+          <div style="font-family:Sarabun,sans-serif;font-size:8pt;letter-spacing:0.16em;color:#00B085">MILESTONE</div>
+          <div style="font-family:'Public Sans',sans-serif;font-weight:700;font-size:16pt;line-height:1.12;color:#19191D;letter-spacing:-0.015em">220 countries, one point of contact</div>
+          <img src="https://sivadonlogistics.com/wp-content/uploads/2024/08/logo-sivadon.svg" alt="Sivadon" style="height:18px;align-self:flex-start" />
+        </div>
+        <div style="padding:14px 18px;font-size:9.5pt;color:#55555A;border-top:1px solid #E4E4E5">Social post, 1:1. Statistic-led, Mono 100 type on white, green kicker, logo bottom left. Photo variants use a dark scrim behind the logo.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:34px;padding-top:16px;border-top:1px solid #E4E4E5;font-size:9.5pt;color:#8B8B8D;line-height:1.6;break-inside:avoid">
+      Questions about applying this system, or a case it doesn't cover: contact@sdcl.co.th. Sivadon Logistics, 450/2 Boonyasathit Building, 2nd Floor, Rama III Rd., Bangkhol, Bangkholaem, Bangkok 10120.
+    </div>
+
+  </div>
+</doc-page>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      toc: [
+        { num: "01", label: "Brand foundation & logo" },
+        { num: "02", label: "Colour" },
+        { num: "03", label: "Typography" },
+        { num: "04", label: "Spacing, grid & components" },
+        { num: "05", label: "Photography" },
+        { num: "06", label: "Voice & tone" },
+        { num: "07", label: "Applications" },
+        { num: "—", label: "Contact & asset requests" }
+      ],
+      pillars: [
+        { kicker: "WHO WE ARE", title: "An operator, not a broker", body: "Twenty-plus years of nationwide operating history. We run the network we sell." },
+        { kicker: "WHAT WE PROMISE", title: "Your window to Thailand", body: "Local businesses grow nationwide; global brands scale across Southeast Asia without building a country team." },
+        { kicker: "HOW WE SOUND", title: "Precise and unhurried", body: "Specific numbers, plain sentences, no hype. Confidence comes from detail, not adjectives." }
+      ],
+      logoDo: [
+        "Use the supplied SVG or EPS without modification.",
+        "Keep clear space equal to the mark's height on all four sides.",
+        "Minimum size: 24px on screen, 12mm in print.",
+        "Reverse to white on Mono 100, or a photo at 40%+ overlay."
+      ],
+      logoDont: [
+        "Recolour, outline, shadow, or gradient the mark.",
+        "Stretch, rotate, or rebuild the lockup from live type.",
+        "Place it on Sivadon Green or Orange — the mark needs a neutral ground.",
+        "Set the wordmark in anything other than Public Sans Bold."
+      ],
+      scale: [
+        { token: "display", family: "Public Sans Bold", size: "56 / 60", track: "−0.02em" },
+        { token: "h1", family: "Public Sans Bold", size: "44 / 50", track: "−0.02em" },
+        { token: "h2", family: "Public Sans Bold", size: "32 / 40", track: "−0.015em" },
+        { token: "h3", family: "Public Sans SemiBold", size: "24 / 32", track: "0" },
+        { token: "h4", family: "Public Sans SemiBold", size: "20 / 28", track: "0" },
+        { token: "body-lg", family: "Public Sans Regular", size: "20 / 32", track: "0" },
+        { token: "body", family: "Public Sans Regular", size: "16 / 26", track: "0" },
+        { token: "button", family: "Public Sans Bold", size: "18 / 24", track: "0" },
+        { token: "small", family: "Public Sans Regular", size: "14 / 22", track: "0" },
+        { token: "caption", family: "Sarabun SemiBold", size: "12 / 18", track: "+0.1em" }
+      ],
+      imgDo: [
+        "Sivadon vehicles, sites and staff, shot on location.",
+        "Natural light, cool neutral grade, no heavy filters.",
+        "People mid-task with hands visible — work in progress.",
+        "Wide establishing shots paired with one tight detail crop."
+      ],
+      imgDont: [
+        "Generic stock warehouses with no identifying detail.",
+        "Boardroom handshakes, arrows, or globe composites.",
+        "Green or orange duotone overlays on photography.",
+        "Competitor liveries or unreleased client branding in frame."
+      ],
+      voice: [
+        { title: "Specific over superlative", body: "\"220 countries\" and \"100% inventory accuracy\" do more work than \"world-class\". If a claim has a number, use the number." },
+        { title: "Short sentences, full words", body: "Plain English that survives translation into Thai and Chinese. Avoid idiom and internal jargon." },
+        { title: "Customer's outcome first", body: "Lead with what the customer gets, then how we do it. \"Focus on growth\" before \"in-house systems\"." }
+      ],
+      copyPairs: [
+        { good: "We deliver to all 77 provinces, typically within 48 hours.", bad: "We offer unparalleled, best-in-class delivery coverage." },
+        { good: "Our team will reach out within 24 hours.", bad: "We'll be in touch as soon as humanly possible!" },
+        { good: "100% inventory accuracy, verified at every cycle count.", bad: "Accuracy you can trust, every single time." },
+        { good: "Founded in 2022 by logistics and eCommerce veterans.", bad: "A revolutionary force disrupting Southeast Asian logistics." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

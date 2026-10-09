@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior:smooth;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The ShipX Field Notes — Cross-Border Logistics Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<style id="reveal-fouc">
+  html.js-reveal-ready [data-reveal="cascade"] > *,
+  html.js-reveal-ready [data-reveal="fade"] { opacity: 0; }
+  html[data-reduced-motion="true"].js-reveal-ready [data-rm-reveal="cascade"] > *,
+  html[data-reduced-motion="true"].js-reveal-ready [data-rm-reveal="fade"] { opacity: 0; }
+</style>
+<script>
+  try {
+    if (localStorage.getItem('shipx-reduced-motion') === '1') {
+      document.documentElement.setAttribute('data-reduced-motion', 'true');
+    }
+  } catch (_) {}
+  document.documentElement.classList.add('js-reveal-ready');
+  window.__rmRevealFailsafe = setTimeout(function () {
+    document.documentElement.classList.remove('js-reveal-ready');
+  }, 1500);
+</script>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav style="position:sticky;top:0;z-index:100;width:100%;height:72px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 64px;background:rgba(52,24,52,0.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);">
+  <div style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
+    <img src="assets/logos/shipx-logo-white.svg" alt="ShipX" style="height:24px;width:auto;display:block;">
+    <span style="font-family:Inter,sans-serif;font-size:9px;font-weight:500;letter-spacing:0.12em;color:rgba(255,255,255,0.45);padding-left:14px;border-left:1px solid rgba(255,255,255,0.15);text-transform:uppercase;line-height:1.4;">Delivering<br>beyond borders</span>
+  </div>
+  <div style="display:flex;gap:30px;flex:1;justify-content:center;">
+    <a href="#" class="snx-nav-link" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);display:inline-flex;align-items:center;gap:5px;text-decoration:none;">Services
+      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#" class="snx-nav-link" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);display:inline-flex;align-items:center;gap:5px;text-decoration:none;">Solutions
+      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#" class="snx-nav-link" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);text-decoration:none;">Tools</a>
+    <a href="#" class="snx-nav-link" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);text-decoration:none;">Pricing</a>
+    <a href="blog.html" class="snx-nav-link snx-nav-active" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:#fff;display:inline-flex;align-items:center;gap:5px;text-decoration:none;padding-bottom:3px;border-bottom:2px solid #FF00E5;">Resources
+      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+    <button style="background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:500;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;letter-spacing:0.04em;cursor:pointer;">
+      <span style="width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#FF00E5,#4F378A);display:inline-block;flex-shrink:0;"></span>
+      EN
+      <svg width="9" height="9" viewBox="0 0 20 20" fill="none" style="opacity:0.7" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button style="background:transparent;border:1px solid rgba(255,255,255,0.3);border-radius:8px;color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:500;padding:8px 16px;cursor:pointer;">Log in / Sign up</button>
+    <a href="#" style="background:linear-gradient(135deg,#4F378A 0%,rgba(255,0,229,0.85) 100%);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;border-radius:8px;padding:9px 18px;display:inline-flex;align-items:center;gap:8px;box-shadow:inset 0 0 4px rgba(255,88,238,0.6),inset -2px -2px 4px #9A00AE,0 1px 2px rgba(20,0,99,0.4),0 0 18px rgba(255,0,229,0.3);text-decoration:none;">Talk to Sales
+      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.167 10h11.667M10 4.167L15.833 10 10 15.833" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ 1. HERO ═══ -->
+<section class="hero hero--centered">
+  <canvas class="hero-particles" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="hero-centered">
+      <span class="eyebrow eyebrow--on-dark"><span class="dot"></span>Our Field Notes</span>
+      <h1>Insights from <span class="magenta-italic">the field.</span></h1>
+      <p class="lead">Working logistics intel from the ground &mdash; ASEAN corridors, customs trends, AI routing, and what we&rsquo;re learning shipping millions of parcels a year.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. FEATURED FIELD NOTES — editorial pairing ═══ -->
+<section class="section field-notes" id="featured">
+  <div class="container">
+    <header class="section-head ff-head" data-reveal="fade">
+      <span class="eyebrow"><span class="dot"></span>Featured Field Notes</span>
+      <h2>Dive into our <span class="magenta-italic">top stories.</span></h2>
+      <p>The four pieces our customers, our reporters, and our own ops team came back to most this quarter.</p>
+    </header>
+
+    <div class="ff-grid" data-reveal="cascade">
+
+      <!-- LEFT: tall feature -->
+      <a href="blog-post.html" class="ff-big">
+        <div class="ff-big-body">
+          <span class="tp-card-cat ff-big-cat" data-cat="industry-report">Industry Report</span>
+          <h3 class="ff-big-title">Why Cross-Border Shipping from Vietnam is Still Broken in 2026.</h3>
+          <p class="ff-big-dek">After three years of FTAs, port upgrades, and AI-routing pitches, ASEAN sellers still wait nine days for parcels that should take four. Here&rsquo;s where the lane actually breaks &mdash; and what 600,000 Q1 parcels taught us about fixing it.</p>
+        </div>
+        <div class="ff-big-img">
+          <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=1600&q=80&auto=format&fit=crop" alt="Container yard at Cát Lái Port, Ho Chi Minh City">
+        </div>
+        <div class="ff-big-foot">
+          <span class="avatar-sm" aria-hidden="true">KN</span>
+          <span class="who">Kim Nguyen</span>
+          <span class="role">Head of Ops, ShipX Vietnam</span>
+          <span class="ff-big-foot-right">
+            <span>9 min read</span>
+            <span class="sep">·</span>
+            <span>Apr 30, 2026</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </span>
+        </div>
+      </a>
+
+      <!-- RIGHT: stacked horizontal list (3 cards = 1+3 total) -->
+      <div class="ff-stack">
+
+        <a href="blog-post.html" class="ff-row">
+          <div class="ff-row-img">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&q=80&auto=format&fit=crop" alt="ASEAN operations team meeting">
+          </div>
+          <div class="ff-row-body">
+            <div class="ff-row-meta">
+              <span class="cat" data-cat="industry-report">Industry Report</span>
+              <span class="sep">·</span>
+              <span class="read">10 min read</span>
+            </div>
+            <h4 class="ff-row-title">Why Indonesian Sellers Beat Vietnamese Ones on the Beauty Lane.</h4>
+            <div class="ff-row-foot">
+              <span class="avatar-sm" aria-hidden="true">TT</span>
+              <span class="who">Thuan Tran</span>
+              <span class="sep">·</span>
+              <span>Jan 24</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog-post.html" class="ff-row">
+          <div class="ff-row-img">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=400&q=80&auto=format&fit=crop" alt="Container ship at sea">
+          </div>
+          <div class="ff-row-body">
+            <div class="ff-row-meta">
+              <span class="cat" data-cat="industry-report">Industry Report</span>
+              <span class="sep">·</span>
+              <span class="read">7 min read</span>
+            </div>
+            <h4 class="ff-row-title">Sea Freight is Back. Air Cargo Should Be Nervous.</h4>
+            <div class="ff-row-foot">
+              <span class="avatar-sm" aria-hidden="true">HN</span>
+              <span class="who">Hung Nguyen</span>
+              <span class="sep">·</span>
+              <span>Mar 8</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="blog-post.html" class="ff-row">
+          <div class="ff-row-img">
+            <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&q=80&auto=format&fit=crop" alt="Parcel scanning station">
+          </div>
+          <div class="ff-row-body">
+            <div class="ff-row-meta">
+              <span class="cat" data-cat="ai-routing">AI &amp; Routing</span>
+              <span class="sep">·</span>
+              <span class="read">8 min read</span>
+            </div>
+            <h4 class="ff-row-title">We Routed 80,000 Parcels with AI Last Quarter. The Honest Scorecard.</h4>
+            <div class="ff-row-foot">
+              <span class="avatar-sm" aria-hidden="true">HT</span>
+              <span class="who">Hai Tran</span>
+              <span class="sep">·</span>
+              <span>Apr 4</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. THE ARCHIVE — browse + filter (moved here, search+chips in header) ═══ -->
+<section class="section section--purple" id="articles">
+  <div class="container">
+    <div class="browse-head" data-reveal="fade">
+      <div class="browse-intro">
+        <span class="eyebrow"><span class="dot"></span>The Archive</span>
+        <h2>Browse by <span class="magenta-italic">topic.</span></h2>
+        <p class="browse-dek">Everything we&rsquo;ve published &mdash; filtered by lane, topic, or whatever you&rsquo;re chasing today.</p>
+      </div>
+      <div class="browse-toolbar" role="region" aria-label="Filter articles">
+        <form class="browse-search" role="search" onsubmit="event.preventDefault();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+          <input id="blog-search" type="search" placeholder="Search field notes&hellip;" aria-label="Search articles" autocomplete="off">
+          <kbd class="browse-search-kbd" aria-hidden="true">/</kbd>
+        </form>
+        <div class="browse-chips" role="tablist" aria-label="Filter by category">
+          <button type="button" class="browse-chip is-active" role="tab" aria-selected="true" data-cat="all">All <span class="browse-chip-n">9</span></button>
+          <button type="button" class="browse-chip" role="tab" aria-selected="false" data-cat="industry-report">Industry Report</button>
+          <button type="button" class="browse-chip" role="tab" aria-selected="false" data-cat="customs">Customs</button>
+          <button type="button" class="browse-chip" role="tab" aria-selected="false" data-cat="ai-routing">AI &amp; Routing</button>
+          <button type="button" class="browse-chip" role="tab" aria-selected="false" data-cat="operations">Operations</button>
+          <button type="button" class="browse-chip" role="tab" aria-selected="false" data-cat="product-updates">Product Updates</button>
+        </div>
+        <div class="browse-toolbar-end">
+          <a class="link-all browse-toolbar-link" href="#" id="tp-empty-reset" style="display:none;">Reset
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"></path><path d="M3 4v5h5"></path></svg>
+          </a>
+          <a class="link-all browse-toolbar-link" href="#subscribe" id="tp-rss">Subscribe
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M4 4l8 8 8-8"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tp-grid" id="tp-grid" data-reveal="cascade">
+
+      <a href="blog-post.html" class="tp-card" data-cat="industry-report" data-search="vietnam cross-border kim nguyen broken 2026">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="industry-report">Industry Report</span>
+          <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=900&q=80&auto=format&fit=crop" alt="Container yard at Cát Lái Port, Ho Chi Minh City">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">Why Cross-Border Shipping from Vietnam is Still Broken in 2026.</h3>
+          <p class="tp-card-dek">After three years of FTAs, port upgrades, and AI-routing pitches, ASEAN sellers still wait nine days for parcels that should take four.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">KN</span>
+            <span class="who">Kim Nguyen</span>
+            <span class="sep">·</span>
+            <span>9 min</span>
+            <span class="sep">·</span>
+            <span>Apr 30</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="tp-card" data-cat="customs" data-search="cn22 t11 customs commercial clearance chi le border">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="customs">Customs</span>
+          <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?w=900&q=80&auto=format&fit=crop" alt="Cross-docking warehouse with palletised cargo ready for customs inspection">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">What CN22 vs. T11 Actually Costs You at the Border.</h3>
+          <p class="tp-card-dek">Three commercial-clearance routes, one decision matrix. If you&rsquo;re shipping over $200, your declaration is leaking days.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">CL</span>
+            <span class="who">Chi Le</span>
+            <span class="sep">·</span>
+            <span>6 min</span>
+            <span class="sep">·</span>
+            <span>Apr 18</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="tp-card" data-cat="ai-routing" data-search="ai routing 80000 parcels scorecard hai tran model">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="ai-routing">AI &amp; Routing</span>
+          <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=900&q=80&auto=format&fit=crop" alt="Parcel scanning station with dashboard data overlays">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">We Routed 80,000 Parcels with AI Last Quarter. The Honest Scorecard.</h3>
+          <p class="tp-card-dek">Where the model beat our ops team. Where it didn&rsquo;t. The four lanes we still route manually &mdash; and why.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">HT</span>
+            <span class="who">Hai Tran</span>
+            <span class="sep">·</span>
+            <span>8 min</span>
+            <span class="sep">·</span>
+            <span>Apr 4</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="tp-card" data-cat="operations" data-search="pickup gap 14 hour first mile sortation luyen ngo">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="operations">Operations</span>
+          <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?w=900&q=80&auto=format&fit=crop&crop=entropy" alt="Pickup dock loading workflow at a ShipX origin warehouse">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">The 14-Hour Pickup Gap That Nobody Talks About.</h3>
+          <p class="tp-card-dek">First-mile from seller to sortation is where most lanes hemorrhage time. Three operational fixes that closed the gap on our SG corridor.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">LN</span>
+            <span class="who">Luyen Ngo</span>
+            <span class="sep">·</span>
+            <span>5 min</span>
+            <span class="sep">·</span>
+            <span>Mar 22</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="tp-card" data-cat="industry-report" data-search="sea freight ocean air cargo capacity hung nguyen">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="industry-report">Industry Report</span>
+          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=900&q=80&auto=format&fit=crop" alt="Container ship at sea, loaded with consolidated freight">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">Sea Freight is Back. Air Cargo Should Be Nervous.</h3>
+          <p class="tp-card-dek">Capacity is back, rates have stabilised, and the math has shifted. Why a third of our customers moved volume off air last quarter.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">HN</span>
+            <span class="who">Hung Nguyen</span>
+            <span class="sep">·</span>
+            <span>7 min</span>
+            <span class="sep">·</span>
+            <span>Mar 8</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="tp-card" data-cat="product-updates" data-search="us linehaul network fba west coast injection anh phan">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="product-updates">Product Updates</span>
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80&auto=format&fit=crop" alt="ShipX-branded delivery truck on a US highway">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">Inside ShipX&rsquo;s New US Linehaul Network.</h3>
+          <p class="tp-card-dek">Five regional hubs, two new FBA injection points, and a 1.8-day improvement on west-coast last mile. What&rsquo;s live and what&rsquo;s next.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">AP</span>
+            <span class="who">Anh Phan</span>
+            <span class="sep">·</span>
+            <span>4 min</span>
+            <span class="sep">·</span>
+            <span>Feb 24</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="tp-card" data-cat="operations" data-search="lithium batteries dangerous goods kim nguyen certifications">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="operations">Operations</span>
+          <img src="https://images.unsplash.com/photo-1540339832862-474599807836?w=900&q=80&auto=format&fit=crop" alt="Cargo plane loading hazardous-class shipments">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">Lithium Batteries: How We Started Accepting What Others Won&rsquo;t.</h3>
+          <p class="tp-card-dek">How we onboarded battery-class commodities, the certifications it took, and why 8% of Q1 volume is goods most forwarders still reject.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">KN</span>
+            <span class="who">Kim Nguyen</span>
+            <span class="sep">·</span>
+            <span>6 min</span>
+            <span class="sep">·</span>
+            <span>Feb 10</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="tp-card" data-cat="industry-report" data-search="indonesian vietnamese beauty lane thuan tran sellers">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="industry-report">Industry Report</span>
+          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=900&q=80&auto=format&fit=crop" alt="ShipX operations team meeting in Singapore office">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">Why Indonesian Sellers Beat Vietnamese Ones on the Beauty Lane.</h3>
+          <p class="tp-card-dek">Indonesia&rsquo;s beauty SKUs reach Long Beach two days faster than Vietnam&rsquo;s. The lane economics, the customs choreography, and what VN sellers should copy.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">TT</span>
+            <span class="who">Thuan Tran</span>
+            <span class="sep">·</span>
+            <span>10 min</span>
+            <span class="sep">·</span>
+            <span>Jan 24</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" class="tp-card" data-cat="customs" data-search="asean eu customs reforms ics2 ioss low-value chi le">
+        <div class="tp-card-img">
+          <span class="tp-card-cat" data-cat="customs">Customs</span>
+          <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=900&q=80&auto=format&fit=crop&crop=entropy" alt="Container yard photographed from above, illustrating EU-bound consolidation">
+        </div>
+        <div class="tp-card-body">
+          <h3 class="tp-card-title">The Quiet Customs Reforms Reshaping ASEAN&nbsp;&rarr;&nbsp;EU This Year.</h3>
+          <p class="tp-card-dek">ICS2, IOSS, and the new low-value reforms reshaping every shipment under &euro;150. Seven changes already affecting our EU-bound volume.</p>
+          <div class="tp-card-foot">
+            <span class="avatar-sm" aria-hidden="true">CL</span>
+            <span class="who">Chi Le</span>
+            <span class="sep">·</span>
+            <span>8 min</span>
+            <span class="sep">·</span>
+            <span>Dec 18</span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="tp-empty" id="tp-empty" hidden>
+      <div class="tp-empty-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      </div>
+      <h3>No field notes match that filter.</h3>
+      <p>Try a different topic, or <button type="button" class="tp-empty-reset-link" id="tp-empty-reset-inline">clear the filters</button>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. TOOLKIT ═══ -->
+<section class="toolkit">
+  <div class="container">
+    <header class="section-head" data-reveal="cascade" style="align-items:center;text-align:center;margin-inline:auto;">
+      <span class="eyebrow"><span class="dot"></span>Tools in our writing</span>
+      <h2>Tools that <span class="magenta-italic">do the math</span> for you.</h2>
+    </header>
+
+    <div class="toolkit-grid" data-reveal="cascade">
+
+      <a class="toolkit-card featured" href="#">
+        <span class="featured-tag">Start here</span>
+        <span class="duo-icon" data-duo-name="pricing" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="#FF00E5" stroke="none" opacity="0.35"></path>
+            <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <h3 class="toolkit-name">Live rates. No back-and-forth.</h3>
+        <p class="toolkit-desc">Three questions, ranked rates across every lane. Compare what you&rsquo;re paying now to what you should be paying.</p>
+        <span class="toolkit-cta">Get a quote
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </span>
+      </a>
+
+      <a class="toolkit-card" href="#">
+        <span class="duo-icon" data-duo-name="product" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="2.6" fill="#FF00E5"></circle>
+          </svg>
+        </span>
+        <h3 class="toolkit-name">The right service, matched in a click.</h3>
+        <p class="toolkit-desc">Cosmetics or batteries, 2 kg or 500. Drop your shipment details &mdash; we&rsquo;ll point you at the ShipX service built for it.</p>
+        <span class="toolkit-cta">Find my service
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </span>
+      </a>
+
+      <a class="toolkit-card" href="#">
+        <span class="duo-icon" data-duo-name="tracker" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <ellipse cx="12" cy="20" rx="3.8" ry="1.6" fill="#FF00E5" opacity="0.85"></ellipse>
+            <path d="M19.5 9.5c0 6-7.5 12-7.5 12s-7.5-6-7.5-12a7.5 7.5 0 0115 0z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="9.5" r="2.8" fill="#FF00E5" stroke="#fff" stroke-width="2"></circle>
+          </svg>
+        </span>
+        <h3 class="toolkit-name">Know where it is. Right now.</h3>
+        <p class="toolkit-desc">Real-time updates across every carrier and lane &mdash; one tracker, no carrier-site hopping.</p>
+        <span class="toolkit-cta">Track a shipment
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </span>
+      </a>
+
+    </div>
+
+    <div class="toolkit-footer">
+      <a class="toolkit-explore-cta" href="#">
+        Explore all toolkits
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+      </a>
+      <span class="toolkit-footer-meta">6 tools &middot; always free</span>
+    </div>
+  </div>
+</section>
+<script src="js/duo-icon-spy.js" defer></script>
+
+<!-- ═══ 6. FAQs ═══ -->
+<section class="section">
+  <div class="container">
+    <header class="section-head" data-reveal="fade" style="align-items:center;text-align:center;margin-inline:auto;">
+      <span class="eyebrow"><span class="dot"></span>FAQs</span>
+      <h2>Reader questions, <span class="magenta-italic">answered.</span></h2>
+    </header>
+
+    <div class="faq-list" style="margin: 0 auto;" data-reveal="cascade">
+      <details class="faq" open>
+        <summary>How often do you publish?</summary>
+        <div class="faq-body">
+          <p>One headline piece per month, plus 2&ndash;3 shorter field notes between releases. The monthly long-read is what the Lane Letter newsletter circulates &mdash; the short notes go up here without an email.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Can I republish or quote your articles?</summary>
+        <div class="faq-body">
+          <p>Short excerpts (up to 150 words) and pulled stats are fine with a link back. Full republishing requires a quick email to <strong>press@shipx.asia</strong> &mdash; we usually say yes within 48 hours.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Where do the data points come from?</summary>
+        <div class="faq-body">
+          <p>From ShipX&rsquo;s own network. Every transit number, cost figure, or volume stat in our writing is pulled from the parcels we move &mdash; ~2.5M last year across the VN, SG, MY, ID, and TH origins. We never cite third-party reports without naming them inline.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Can I pitch a guest article?</summary>
+        <div class="faq-body">
+          <p>Yes, if you&rsquo;re an operator: warehouse manager, customs broker, marketplace seller, freight forwarder. We don&rsquo;t take vendor-led pitches. Send a paragraph + an outline to <strong>editor@shipx.asia</strong>.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>How do I subscribe to the Lane Letter?</summary>
+        <div class="faq-body">
+          <p>Use the form at the bottom of this page. One email per month with the headline piece and three curated links from the rest of the cross-border world. Already shipping with ShipX? You&rsquo;re auto-subscribed when you create an account.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Do you have an RSS feed or a Slack feed?</summary>
+        <div class="faq-body">
+          <p>RSS at <strong>shipx.asia/blog.rss</strong>. No Slack feed yet, but it&rsquo;s on the roadmap for Q3 &mdash; reply to the Lane Letter if you want a heads-up when it ships.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. NEWSLETTER / BIG CTA ═══ -->
+<section class="newsletter" id="subscribe">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-copy">
+        <span class="eyebrow eyebrow--on-dark"><span class="dot"></span>The Lane Letter · Monthly</span>
+        <h2>One article. One curated piece. <em>Monthly.</em></h2>
+        <p>Industry deep-dives, ASEAN trade signals, and the lessons we learn moving 2.5M+ parcels a year. No fluff, no sales pitches.</p>
+      </div>
+
+      <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('.newsletter-input').value=''; this.querySelector('.newsletter-input').placeholder='You\u2019re on the list. Look for the next issue around the 1st.'; this.querySelector('.newsletter-input').blur();">
+        <div class="newsletter-form-label">Subscribe</div>
+        <div class="newsletter-form-row">
+          <input type="email" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit" class="newsletter-submit">
+            Subscribe
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+        <p class="newsletter-footnote">
+          <strong>Already shipping with ShipX?</strong> You&rsquo;re auto-subscribed &mdash; manage preferences in your dashboard.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="snx-footer" style="background:#fff;border-top:1px solid #E5E7EB;padding:56px 0 32px;">
+  <div class="snx-footer-grid" style="max-width:1440px;margin:0 auto;padding:0 64px;display:grid;grid-template-columns:1.8fr 1fr 1.5fr 1.2fr 1.6fr;gap:48px;align-items:flex-start;">
+    <!-- Col 1: Brand -->
+    <div>
+      <img src="assets/logos/shipx-logo-dark.svg" alt="ShipX" style="height:28px;width:auto;display:block;margin-bottom:12px;">
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:8px;letter-spacing:-0.2px;">ASEAN's Next Generation Platform</div>
+      <div style="font-family:Inter,sans-serif;font-size:13px;color:#4D525C;line-height:1.6;max-width:260px;margin-bottom:20px;">Empowering businesses to ship globally with confidence. Our platform simplifies international shipping, customs, and logistics.</div>
+      <div style="display:flex;gap:8px;">
+        <a href="#" title="LinkedIn" class="snx-social-btn" style="width:32px;height:32px;border-radius:6px;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;color:#4D525C;background:#fff;transition:all 150ms ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="LinkedIn"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"/></svg>
+        </a>
+        <a href="#" title="Instagram" class="snx-social-btn" style="width:32px;height:32px;border-radius:6px;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;color:#4D525C;background:#fff;transition:all 150ms ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+        </a>
+        <a href="#" title="Facebook" class="snx-social-btn" style="width:32px;height:32px;border-radius:6px;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;color:#4D525C;background:#fff;transition:all 150ms ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="Facebook"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" title="Twitter / X" class="snx-social-btn" style="width:32px;height:32px;border-radius:6px;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;color:#4D525C;background:#fff;transition:all 150ms ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="Twitter"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+    <!-- Col 2: Quick Links -->
+    <details class="snx-footer-col" open>
+      <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:16px;letter-spacing:-0.2px;">Quick Links<svg class="snx-footer-chev" width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Home</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Services</a>
+      </div>
+    </details>
+    <!-- Col 3: Toolkit -->
+    <details class="snx-footer-col" open>
+      <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:16px;letter-spacing:-0.2px;">Toolkit<svg class="snx-footer-chev" width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Shipment Tracker</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">HS Code Generator</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Pricing Wizard</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Product Wizard</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Commodity Checker</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Transit Times</a>
+      </div>
+    </details>
+    <!-- Col 4: Legal -->
+    <details class="snx-footer-col" open>
+      <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:16px;letter-spacing:-0.2px;">Legal<svg class="snx-footer-chev" width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Privacy Policy</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Terms and Conditions</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Compensation Policy</a>
+        <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Liability Policy</a>
+      </div>
+    </details>
+    <!-- Col 5: Contact + Resources -->
+    <div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:#1E2939;margin-bottom:16px;letter-spacing:-0.2px;">Contact</div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;flex-shrink:0;background:#F5F0FF;border:1px solid #EDE9FE;display:flex;align-items:center;justify-content:center;color:#4F378A;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <span style="font-family:Inter,sans-serif;font-size:13px;color:#4D525C;line-height:1.5;">+1012 3456 789</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;flex-shrink:0;background:#F5F0FF;border:1px solid #EDE9FE;display:flex;align-items:center;justify-content:center;color:#4F378A;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          </div>
+          <span style="font-family:Inter,sans-serif;font-size:13px;color:#4D525C;line-height:1.5;">info@shipx.asia</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;flex-shrink:0;background:#F5F0FF;border:1px solid #EDE9FE;display:flex;align-items:center;justify-content:center;color:#4F378A;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <span style="font-family:Inter,sans-serif;font-size:13px;color:#4D525C;line-height:1.5;">391B Orchard Road<br>#22 Ngee Ann City<br>Singapore, 238874</span>
+        </div>
+      </div>
+      <div style="border-top:1px solid #E5E7EB;padding-top:16px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:#1E2939;margin-bottom:12px;letter-spacing:-0.2px;">Resources</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="blog.html" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">Blogs and Articles</a>
+          <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">FAQs</a>
+          <a href="#" class="snx-footer-link" style="font-family:Inter,sans-serif;font-size:13px;color:#6B7280;text-decoration:none;transition:color 150ms ease;">File A Claim</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="snx-footer-bottom" style="max-width:1440px;margin:32px auto 0;padding:24px 64px;border-top:1px solid #E5E7EB;">
+    <div style="font-family:Inter,sans-serif;font-size:12px;color:#9CA3AF;">© 2025 ShipX Copyright and rights reserved</div>
+  </div>
+</footer>
+
+<!-- ═══ Scripts ═══ -->
+<script src="js/hero-particles.js" defer></script>
+<script src="js/hero-parallax.js" defer></script>
+<script src="js/hero-img-entry.js" defer></script>
+<script src="js/reveal.js" defer></script>
+
+<!-- ═══ MOTION SETTINGS FAB ═══ -->
+<div id="motion-fab-root" style="position:fixed;right:20px;bottom:20px;z-index:9999;font-family:Inter,sans-serif;">
+  <button id="motion-fab-btn" type="button" aria-label="Motion settings" aria-expanded="false" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:linear-gradient(135deg,#341834 0%,#4F378A 100%);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(20,0,99,0.35),inset 0 0 6px rgba(255,88,238,0.35);transition:transform 160ms ease, box-shadow 160ms ease;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </svg>
+  </button>
+  <div id="motion-fab-panel" role="dialog" aria-label="Motion settings" hidden style="position:absolute;right:0;bottom:60px;width:268px;background:#fff;border:1px solid rgba(196,180,255,0.4);border-radius:14px;box-shadow:0 12px 40px rgba(20,0,99,0.18),0 2px 6px rgba(20,0,99,0.08);padding:16px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#341834;">Motion settings</span>
+      <button id="motion-fab-close" type="button" aria-label="Close" style="width:24px;height:24px;border:none;background:transparent;color:#6B5B95;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:6px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <label for="motion-fab-toggle" style="display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;padding:8px 4px 4px;">
+      <span>
+        <span style="display:block;font-size:13px;font-weight:600;color:#1E2939;line-height:1.3;">Reduce motion</span>
+        <span style="display:block;font-size:11px;color:#6B5B95;line-height:1.4;margin-top:2px;">Pause hero animation &amp; particles.</span>
+      </span>
+      <span id="motion-fab-track" data-on="false" style="position:relative;flex-shrink:0;width:38px;height:22px;border-radius:999px;background:#E5E0F0;transition:background 160ms ease;">
+        <input id="motion-fab-toggle" type="checkbox" style="position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer;">
+        <span id="motion-fab-thumb" style="position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(20,0,99,0.25);transition:left 160ms ease;"></span>
+      </span>
+    </label>
+
+    <div style="border-top:1px solid #EDE9FE;margin:14px 0 0;padding:14px 0 4px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#341834;margin:0 0 8px;">Viewport</div>
+      <div style="display:flex;align-items:baseline;gap:6px;font-family:Inter,sans-serif;">
+        <span id="fab-vp-w" style="font-size:22px;font-weight:800;color:#1A0B2E;letter-spacing:-0.5px;line-height:1;">—</span>
+        <span style="font-size:11px;font-weight:500;color:#6B5B95;">px wide</span>
+        <span style="margin-left:auto;font-size:11px;color:#9C8FB8;" id="fab-vp-h">—h</span>
+      </div>
+      <div id="fab-vp-band" style="margin-top:8px;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#F5F0FF;color:#4F378A;border:1px solid #C4B4FF;">
+        <span id="fab-vp-dot" style="width:6px;height:6px;border-radius:50%;background:#4F378A;"></span>
+        <span id="fab-vp-label">—</span>
+      </div>
+      <div style="margin-top:10px;font-size:10px;color:#8B7FA8;line-height:1.5;font-family:Inter,sans-serif;">
+        Mobile &lt;640 &middot; Tablet 640&ndash;1023 &middot; Desktop &ge;1024 &middot; Large &ge;1280
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/motion-fab.js" defer></script>
+
+<!-- ═══ Filter — browse-chips + search filter The Archive grid ═══ -->
+<script>
+  (function () {
+    var chips   = document.querySelectorAll('.browse-chip');
+    var cards   = document.querySelectorAll('#tp-grid .tp-card');
+    var input   = document.getElementById('blog-search');
+    var empty   = document.getElementById('tp-empty');
+    var grid    = document.getElementById('tp-grid');
+    var resetBtns = [
+      document.getElementById('tp-empty-reset'),
+      document.getElementById('tp-empty-reset-inline')
+    ].filter(Boolean);
+
+    var state = { cat: 'all', q: '' };
+
+    function counts() {
+      var byCat = { all: cards.length };
+      cards.forEach(function (c) {
+        var k = c.getAttribute('data-cat');
+        byCat[k] = (byCat[k] || 0) + 1;
+      });
+      chips.forEach(function (chip) {
+        var k = chip.getAttribute('data-cat');
+        var n = chip.querySelector('.browse-chip-n');
+        if (n) n.textContent = byCat[k] || 0;
+      });
+    }
+
+    function apply() {
+      var q = state.q.trim().toLowerCase();
+      var shown = 0;
+      cards.forEach(function (c) {
+        var hit = (state.cat === 'all' || c.getAttribute('data-cat') === state.cat)
+               && (!q || (c.getAttribute('data-search') + ' ' + c.textContent).toLowerCase().indexOf(q) !== -1);
+        c.hidden = !hit;
+        if (hit) shown++;
+      });
+      if (empty) empty.hidden = shown !== 0;
+      if (grid)  grid.style.display = shown === 0 ? 'none' : '';
+      var resetVisible = (state.cat !== 'all' || q !== '');
+      var resetLink = document.getElementById('tp-empty-reset');
+      if (resetLink) resetLink.style.display = resetVisible ? '' : 'none';
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.classList.remove('is-active'); c.setAttribute('aria-selected', 'false'); });
+        chip.classList.add('is-active');
+        chip.setAttribute('aria-selected', 'true');
+        state.cat = chip.getAttribute('data-cat');
+        apply();
+      });
+    });
+
+    if (input) {
+      input.addEventListener('input', function () { state.q = input.value; apply(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === '/' && document.activeElement !== input && !/INPUT|TEXTAREA/.test((document.activeElement || {}).tagName || '')) {
+          e.preventDefault();
+          input.focus();
+          input.scrollIntoView && document.getElementById('articles') && document.getElementById('articles').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+
+    function resetFilters(e) {
+      if (e) e.preventDefault();
+      state.cat = 'all'; state.q = '';
+      if (input) input.value = '';
+      chips.forEach(function (c) {
+        var on = c.getAttribute('data-cat') === 'all';
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      apply();
+    }
+    resetBtns.forEach(function (b) { b.addEventListener('click', resetFilters); });
+
+    counts();
+    apply();
+  })();
+</script>
+
+</body>
+</html>
